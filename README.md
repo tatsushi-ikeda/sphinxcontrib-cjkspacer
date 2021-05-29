@@ -67,11 +67,11 @@ extensions += ['sphinxcontrib.cjkspacer']
     ```
     This however causes selectable spaces in the text.
 
-- `cjkspacer_cjk_characters`
+- `cjkspacer_cjk_characters`: (default: `r'\u2E80-\u9FFF\uF900-\uFAFF\uFF00-\uFF60\uFFE0-\uFFE6\U00020000-\U0003FFFF'`)
 
-- `cjkspacer_before_exception`
+- `cjkspacer_before_exception`: (default: `r'\s\n({\['`)
 
-- `cjkspacer_after_exception`
+- `cjkspacer_after_exception`: (default: `r'\s\n)}\],.'`)
     
     These three elements decide the boundaries between the CJK characters and the other characters.
     
