@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # sphinxcontrib-cjkspacer
-A Sphinx extension, which inserts spacer elements between the CJK characters and the other characters.
+A Sphinx extension, which inserts spacer elements between the Chinese Japanese Korean (CJK) characters and the other characters.
 
 Some of the word processors, e.g., Microsoft® Word and TeX (at least in the case of pTeX), adjust the distances between the CJK characters and the others automatically (c.f. [Requirements for Japanese Text Layout#spacing between characters](https://www.w3.org/TR/jlreq/#spacing_between_characters)).
 Unfortunately, however, HTML with CSS does not have this function as of CSS3 (See the `text-spacing` property discussed in some old versions of W3C® Working Draft, e.g., [1 September 2011](https://www.w3.org/TR/2011/WD-css3-text-20110901/) and [19 January 2012](https://www.w3.org/TR/2012/WD-css3-text-20120119/)).
