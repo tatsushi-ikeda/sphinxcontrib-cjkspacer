@@ -87,9 +87,10 @@ extensions += ['sphinxcontrib.cjkspacer']
     
 ### Default values of `cjkspacer_cjk_characters`, `cjkspacer_before_exception`, and `cjkspacer_after_exception`
 
-If CJK characters are *preceded* by a **space, newline, or opening parenthesis**, we do not insert a spacer *before* the CJK characters.
+In the default configuration, we employ relatively simple rules.
 
-If CJK characters are *followed* by a **space, newline, closing parenthesis, or punctuation**, we do not insert a spacer *after* the CJK characters.
+If CJK characters are *preceded* by a **space** (`\s`), **newline** (`\n`), or **opening parenthesis** (`({\[`), we do not insert a spacer *before* the CJK characters.
+If CJK characters are *followed* by a **space** (`\s`), **newline** (`\n`), **closing parenthesis** (`[)}\]]`), or **punctuation** (`,.:;!?`), we do not insert a spacer *after* the CJK characters.
 
 The following Unicode blocks are adopted as the CJK characters in the default value of `cjkspacer_cjk_characters`:
 
