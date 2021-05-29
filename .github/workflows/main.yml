@@ -1,0 +1,46 @@
+name: CI
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  release:
+    name: Build
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'auto rebuilding site')"
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: "master"
+
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install sphinxcontrib-trimblank lxml
+        pip install -e .
+    - name: Build
+      env:
+        EMBEDDER: ${{ secrets.EMBEDDER }}
+        EMBEDDED: ${{ secrets.EMBEDDED }}
+      run: |
+        mkdir publish -p
+        pushd tests
+        make html
+        # echo "${EMBEDDER}" > embedder.py
+        # echo "${EMBEDDED}" > embedded.xml
+        # python3 embedder.py
+        popd
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/master'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./tests/_build
