@@ -108,7 +108,7 @@ def cjkspacer_init(app):
                      for format in app.config.cjkspacer_spacer.keys()})
 
 def setup(app):
-    app.add_config_value('cjkspacer_spacer', {'html'='<span class="cjkspacer"></span>'}, 'env', dict)
+    app.add_config_value('cjkspacer_spacer', {'html':'<span class="cjkspacer"></span>'}, 'env', dict)
     app.add_config_value('cjkspacer_cjk_characters',   CJKBoundary.CJK_CHARACTERS,   'env', str)
     app.add_config_value('cjkspacer_before_exception', CJKBoundary.BEFORE_EXCEPTION, 'env', str)
     app.add_config_value('cjkspacer_after_exception',  CJKBoundary.AFTER_EXCEPTION,  'env', str)
