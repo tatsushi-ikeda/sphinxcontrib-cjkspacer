@@ -1,5 +1,0 @@
-*.pyc
-*.egg-info
-tests/_build
-dist
-build
