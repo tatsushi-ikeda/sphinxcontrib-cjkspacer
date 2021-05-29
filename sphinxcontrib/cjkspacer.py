@@ -86,8 +86,11 @@ def get_bool_value(config, builder_name):
     return builder_name in config
 
 def insert_cjkspacer(app, doctree, _docname):
+    if app.builder.format not in app.config.cjkspacer_spacer:
+        return
+    spacer_str = app.config.cjkspacer_spacer[app.builder.format]
     visitor = CJKSpacerVisitor(doctree,
-                               cjkspacer(app.config.cjkspacer_spacer_str),
+                               cjkspacer(spacer_str),
                                CJKBoundary(app.config.cjkspacer_cjk_characters,
                                            app.config.cjkspacer_before_exception,
                                            app.config.cjkspacer_after_exception))
@@ -101,12 +104,11 @@ def depart_cjkspacer(self, node):
 
 def cjkspacer_init(app):
     app.add_node(cjkspacer,
-                 html=(visit_cjkspacer,
-                       depart_cjkspacer))
+                 **{format:(visit_cjkspacer, depart_cjkspacer)
+                     for format in app.config.cjkspacer_spacer.keys()})
 
-    
 def setup(app):
-    app.add_config_value('cjkspacer_spacer_str', '<span class="cjkspacer"></span>', 'env', str)
+    app.add_config_value('cjkspacer_spacer', {'html'='<span class="cjkspacer"></span>'}, 'env', dict)
     app.add_config_value('cjkspacer_cjk_characters',   CJKBoundary.CJK_CHARACTERS,   'env', str)
     app.add_config_value('cjkspacer_before_exception', CJKBoundary.BEFORE_EXCEPTION, 'env', str)
     app.add_config_value('cjkspacer_after_exception',  CJKBoundary.AFTER_EXCEPTION,  'env', str)
