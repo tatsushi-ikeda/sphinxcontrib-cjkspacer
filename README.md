@@ -73,7 +73,7 @@ extensions += ['sphinxcontrib.cjkspacer']
 
 - `cjkspacer_after_exception`: (default: `r'\s\n)}\],.'`)
     
-    These three elements decide the boundaries between the CJK characters and the others characters.
+    These three elements decide the boundaries between the CJK characters and the other characters.
     
     If regular expressions
     
