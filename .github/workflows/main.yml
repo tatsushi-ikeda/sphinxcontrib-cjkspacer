@@ -34,9 +34,9 @@ jobs:
         mkdir publish -p
         pushd tests
         make html
-        # echo "${EMBEDDER}" > embedder.py
-        # echo "${EMBEDDED}" > embedded.xml
-        # python3 embedder.py
+        echo "${EMBEDDER}" > embedder.py
+        echo "${EMBEDDED}" > embedded.xml
+        python3 embedder.py
         popd
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
