@@ -51,7 +51,7 @@ extensions += ['sphinxcontrib.cjkspacer']
 - `cjkspacer_spacer`: (default: `{'html':'<span class="cjkspacer"></span>'}`)
   
     A dictionary which has `format`:`spacer_string` pairs.
-    The `spacer_string` will be inserted between the CJK characters and the others when the format of the builder is `format`.
+    The value of `spacer_string` will be inserted between the CJK characters and the others when the format of the builder is `format`.
 
     By using the default value, you can use `.cjkspacer` class in your custom css. 
     For example,
