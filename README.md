@@ -11,7 +11,7 @@ This Sphinx extension provides an alternative function to adjust such distances.
 
 This extension is inspired by [sphinxcontrib-trimblank](https://github.com/amedama41/sphinxcontrib-trimblank).
 The combination betweeen `sphinxcontrib-trimblank` and `sphinxcontrib-cjkspacer` should work well for the `html` builders:
-`sphinxcontrib-trimblank` removes redundant spaces caused by the limitation of reStructuredText syntax, and then `sphinxcontrib-cjkspacer` adjusts distances between characters (See demo).
+`sphinxcontrib-trimblank` removes redundant spaces caused by the limitation of the reStructuredText syntax, and then `sphinxcontrib-cjkspacer` adjusts distances between characters (See demo).
 
 ## Install
 
