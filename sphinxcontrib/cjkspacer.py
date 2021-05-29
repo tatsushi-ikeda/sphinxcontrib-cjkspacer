@@ -3,25 +3,27 @@ from itertools import zip_longest, chain
 from docutils import nodes
 
 class cjkspacer(nodes.General, nodes.Element):
-    pass
+    def __init__(self, spacer_str):
+        self._spacer_str = spacer_str
+        nodes.General.__init__(self)
+        nodes.Element.__init__(self)
 
 class CJKBoundary(object):
-    CJK_RANGE_LIST = [r'\u2E80-\u9FFF', r'\uF900-\uFAFF', r'\uFF00-\uFF60\uFFE0-\uFFE6', r'\U00020000-\U0003FFFF']
-    BEFORE_EXCEPTION_LIST = ['\s\n']
-    AFTER_EXCEPTION_LIST  = ['\s\n']
+    CJK_CHARACTERS = r'\u2E80-\u9FFF\uF900-\uFAFF\uFF00-\uFF60\uFFE0-\uFFE6\U00020000-\U0003FFFF'
+    BEFORE_EXCEPTION = r'\s\n({\['
+    AFTER_EXCEPTION  = r'\s\n)}\],.'
     
-    def __init__(self):
-        cjk_pattern = ''.join(CJKBoundary.CJK_RANGE_LIST)
-        b_except_pattern = ''.join(CJKBoundary.BEFORE_EXCEPTION_LIST + CJKBoundary.CJK_RANGE_LIST)
-        a_except_pattern = ''.join(CJKBoundary.AFTER_EXCEPTION_LIST  + CJKBoundary.CJK_RANGE_LIST)
+    def __init__(self, cjk_pattern, b_except_pattern, a_except_pattern):
         self._border_pattern_pairs = (
-            (re.compile('(?:[^{b_except}])$'.format(b_except=b_except_pattern)),
+            (re.compile('(?:[^{b_except}])$'.format(b_except=b_except_pattern + cjk_pattern)),
              re.compile('^(?:[{cjk}])'.format(cjk=cjk_pattern))),
             (re.compile('(?:[{cjk}])$'.format(cjk=cjk_pattern)),
-             re.compile('^(?:[^{a_except}])'.format(a_except=a_except_pattern)))
+             re.compile('^(?:[^{a_except}])'.format(a_except=a_except_pattern + cjk_pattern)))
         )
         self._pattern = re.compile('(?<![{b_except}])(?=[{cjk}])|(?<=[{cjk}])(?![{a_except}])'.format(
-            cjk=cjk_pattern, b_except=b_except_pattern, a_except=a_except_pattern)
+            cjk=cjk_pattern,
+            b_except=b_except_pattern + cjk_pattern,
+            a_except=a_except_pattern + cjk_pattern)
         )
 
     def split(self, txt):
@@ -37,11 +39,10 @@ class CJKSpacerVisitor(nodes.GenericNodeVisitor):
         nodes.Invisible, nodes.Bibliographic
     )
 
-    def __init__(self, document, spacer):
+    def __init__(self, document, spacer, cjk_boundary):
         super(CJKSpacerVisitor, self).__init__(document)
         self._spacer = spacer
-        self._cjk_boundary = CJKBoundary()
-        self._spacer = cjkspacer()
+        self._cjk_boundary = cjk_boundary
 
     def default_visit(self, node):
         if not isinstance(node, nodes.TextElement):
@@ -85,25 +86,32 @@ def get_bool_value(config, builder_name):
     return builder_name in config
 
 def insert_cjkspacer(app, doctree, _docname):
-    spacer = cjkspacer()
-    visitor = CJKSpacerVisitor(doctree, spacer)
+    visitor = CJKSpacerVisitor(doctree,
+                               cjkspacer(app.config.cjkspacer_spacer_str),
+                               CJKBoundary(app.config.cjkspacer_cjk_characters,
+                                           app.config.cjkspacer_before_exception,
+                                           app.config.cjkspacer_after_exception))
     doctree.walk(visitor)
 
+def visit_cjkspacer(self, node):
+    self.body.append(node._spacer_str)
+    
+def depart_cjkspacer(self, node):
+    pass
+
 def cjkspacer_init(app):
-    spacer_str = app.config.cjkspacer_spacer_str
-
-    def visit_cjkspacer(self, node):
-        self.body.append(spacer_str)
-
-    def depart_cjkspacer(self, node):
-        pass
-
     app.add_node(cjkspacer,
                  html=(visit_cjkspacer,
                        depart_cjkspacer))
 
+    
 def setup(app):
     app.add_config_value('cjkspacer_spacer_str', '<span class="cjkspacer"></span>', 'env', str)
+    app.add_config_value('cjkspacer_cjk_characters',   CJKBoundary.CJK_CHARACTERS,   'env', str)
+    app.add_config_value('cjkspacer_before_exception', CJKBoundary.BEFORE_EXCEPTION, 'env', str)
+    app.add_config_value('cjkspacer_after_exception',  CJKBoundary.AFTER_EXCEPTION,  'env', str)
+    # formats, dict
+    
     app.connect('builder-inited', cjkspacer_init)
     app.connect("doctree-resolved", insert_cjkspacer)
     
