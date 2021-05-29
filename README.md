@@ -95,35 +95,35 @@ The following Unicode blocks are adopted as the CJK characters in the default va
 
 - CJK characters
 
-    | from      | to        | Example | Unicode block name                               |
-    |:---------:|:---------:|:-------:|:------------------------------------------------:|
-    | `\u2E80`  | `\u2EFF`  | ⺀      | CJK Radicals Supplement                          |
-    | `\u2F00`  | `\u2FDF`  | ⼀      | Kangxi Radicals                                  |
-    | `\u2FF0`  | `\u2FFF`  | ⿰      | Ideographic Description Characters               |
-    | `\u3000`  | `\u303F`  | 々      | CJK Symbols and Punctuation                      |
-    | `\u3040`  | `\u309F`  | あ      | Hiragana                                         |
-    | `\u30A0`  | `\u30FF`  | ア      | Katakana                                         |
-    | `\u3100`  | `\u312F`  | ㄅ      | Bopomofo                                         |
-    | `\u3130`  | `\u318F`  | ㄱ      | Hangul Compatibility Jamo                        |
-    | `\u3190`  | `\u319F`  | ㆐      | Kanbun                                           |
-    | `\u31A0`  | `\u31BF`  | ㆠ      | Bopomofo Extended                                |
-    | `\u31C0`  | `\u31EF`  | ㇀      | CJK Strokes                                      |
-    | `\u31F0`  | `\u31FF`  | ㇰ      | Katakana Phonetic Extensions                     |
-    | `\u3200`  | `\u32FF`  | ㉑      | Enclosed CJK Letters and Months                  |
-    | `\u3300`  | `\u33FF`  | ㎏      | CJK Compatibility                                |
-    | `\u3400`  | `\u4DBF`  | 㐀      | CJK Unified Ideographs Extension A               |
-    | `\u4DC0`  | `\u4DFF`  | ䷀       | Yijing Hexagram Symbols                          |
-    | `\u4E00`  | `\u9FFF`  | 一      | CJK Unified Ideographs                           |
-    | `\uF900`  | `\uFAFF`  | 豈      | CJK Compatibility Ideographs                     |
-    | `\uFF00`  | `\uFF60`  | ！      | Halfwidth and Fullwidth Forms (Full width Forms) |
-    | `\uFFE0`  | `\uFFE6`  | ￠      | Halfwidth and Fullwidth Forms (Full width Forms) |
-    | `\u20000` | `\u2A6DF` | 𠀀      | CJK Unified Ideographs Extension B               |
-    | `\u2A700` | `\u2B73F` | 𪜀      | CJK Unified Ideographs Extension C               |
-    | `\u2B740` | `\u2B81F` | 𫝀      | CJK Unified Ideographs Extension D               |
-    | `\u2B820` | `\u2CEAF` | 𫠠      | CJK Unified Ideographs Extension E               |
-    | `\u2CEB0` | `\u2EBEF` | 𬺰      | CJK Unified Ideographs Extension F               |
-    | `\u2F800` | `\u2FA1F` | 丽      | CJK Compatibility Ideographs Supplement          |
-    | `\u30000` | `\u3134F` | 𰀀      | CJK Unified Ideographs Extension G               |
+    | from         | to           | Example | Unicode block name                               |
+    |:------------:|:------------:|:-------:|:------------------------------------------------:|
+    | `\u2E80`     | `\u2EFF`     | ⺀      | CJK Radicals Supplement                          |
+    | `\u2F00`     | `\u2FDF`     | ⼀      | Kangxi Radicals                                  |
+    | `\u2FF0`     | `\u2FFF`     | ⿰      | Ideographic Description Characters               |
+    | `\u3000`     | `\u303F`     | 々      | CJK Symbols and Punctuation                      |
+    | `\u3040`     | `\u309F`     | あ      | Hiragana                                         |
+    | `\u30A0`     | `\u30FF`     | ア      | Katakana                                         |
+    | `\u3100`     | `\u312F`     | ㄅ      | Bopomofo                                         |
+    | `\u3130`     | `\u318F`     | ㄱ      | Hangul Compatibility Jamo                        |
+    | `\u3190`     | `\u319F`     | ㆐      | Kanbun                                           |
+    | `\u31A0`     | `\u31BF`     | ㆠ      | Bopomofo Extended                                |
+    | `\u31C0`     | `\u31EF`     | ㇀      | CJK Strokes                                      |
+    | `\u31F0`     | `\u31FF`     | ㇰ      | Katakana Phonetic Extensions                     |
+    | `\u3200`     | `\u32FF`     | ㉑      | Enclosed CJK Letters and Months                  |
+    | `\u3300`     | `\u33FF`     | ㎏      | CJK Compatibility                                |
+    | `\u3400`     | `\u4DBF`     | 㐀      | CJK Unified Ideographs Extension A               |
+    | `\u4DC0`     | `\u4DFF`     | ䷀       | Yijing Hexagram Symbols                          |
+    | `\u4E00`     | `\u9FFF`     | 一      | CJK Unified Ideographs                           |
+    | `\uF900`     | `\uFAFF`     | 豈      | CJK Compatibility Ideographs                     |
+    | `\uFF00`     | `\uFF60`     | ！      | Halfwidth and Fullwidth Forms (Full width Forms) |
+    | `\uFFE0`     | `\uFFE6`     | ￠      | Halfwidth and Fullwidth Forms (Full width Forms) |
+    | `\U00020000` | `\U0002A6DF` | 𠀀      | CJK Unified Ideographs Extension B               |
+    | `\U0002A700` | `\U0002B73F` | 𪜀      | CJK Unified Ideographs Extension C               |
+    | `\U0002B740` | `\U0002B81F` | 𫝀      | CJK Unified Ideographs Extension D               |
+    | `\U0002B820` | `\U0002CEAF` | 𫠠      | CJK Unified Ideographs Extension E               |
+    | `\U0002CEB0` | `\U0002EBEF` | 𬺰      | CJK Unified Ideographs Extension F               |
+    | `\U0002F800` | `\U0002FA1F` | 丽      | CJK Compatibility Ideographs Supplement          |
+    | `\U00030000` | `\U0003134F` | 𰀀      | CJK Unified Ideographs Extension G               |
 
 The following block is also included into `cjkspacer_cjk_characters` for consistency with *Enclosed CJK Letters and Months*.
 
@@ -190,8 +190,7 @@ Instead, they are included into `cjkspacer_before_exception` and `cjkspacer_afte
 Thus, we set the following as the default configuration.
 
 ```Python
-cjkspacer_cjk_characters   = r'\u2460-\u24FF\u2E80-\u2FFF\u3003-\u3007\u3012\u3013\u301C-\u9FFF\uF900-\uFAFF\uFF00\uFF03-\uFF06\uFF0A\uFF0B\uFF0D\uFF10-\uFF19\uFF1C\uFF1D\uFF1E\uFF20-\uFF3A\uFF3E-\uFF5A\uFF5E\uFFE0-\uFFE6\u20000-\u2A6DF\u2A700-\u2EBEF\u2F800-\u2FA1F\u30000-\u3134F'
-cjkspacer_before_exception = r'\s\n({\[\u3000\u3001\u3002\u3008-\u3011\u3014-\u301B\uFF01\uFF02\uFF07\uFF08\uFF09\uFF0C\uFF0E\uFF0F\uFF1A\uFF1B\uFF1F\uFF3B\uFF3C\uFF3D\uFF5B\uFF5C\uFF5D\uFF5F\uFF60'
+cjkspacer_cjk_characters   = r'\u2460-\u24FF\u2E80-\u2FFF\u3003-\u3007\u3012\u3013\u301C-\u9FFF\uF900-\uFAFF\uFF00\uFF03-\uFF06\uFF0A\uFF0B\uFF0D\uFF10-\uFF19\uFF1C\uFF1D\uFF1E\uFF20-\uFF3A\uFF3E-\uFF5A\uFF5E\uFFE0-\uFFE6\U00020000-\U0002A6DF\U0002A700-\U0002EBEF\U0002F800-\U0002FA1F\U00030000-\U0003134F'
 cjkspacer_after_exception  = r'\s\n)}\],.:;!?\u3000\u3001\u3002\u3008-\u3011\u3014-\u301B\uFF01\uFF02\uFF07\uFF08\uFF09\uFF0C\uFF0E\uFF0F\uFF1A\uFF1B\uFF1F\uFF3B\uFF3C\uFF3D\uFF5B\uFF5C\uFF5D\uFF5F\uFF60'
 ```
 
