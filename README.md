@@ -17,7 +17,7 @@ The combination betweeen `sphinxcontrib-trimblank` and `sphinxcontrib-cjkspacer`
 ## Install
 
 ```
-pip install git+https://github.com/tatsushi-ikeda/sphinxcontrib-linkattr.git@master
+pip install git+https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer.git@master
 ```
 
 ## Usage
