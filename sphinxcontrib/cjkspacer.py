@@ -89,16 +89,23 @@ def insert_cjkspacer(app, doctree, _docname):
     visitor = CJKSpacerVisitor(doctree, spacer)
     doctree.walk(visitor)
 
-def visit_cjkspacer_html(self, node):
-    self.body.append('<span class="cjkspacer"></span>')
+def cjkspacer_init(app):
+    spacer_str = app.config.cjkspacer_spacer_str
 
-def depart_cjkspacer_html(self, node):
-    pass
+    def visit_cjkspacer(self, node):
+        self.body.append(spacer_str)
+
+    def depart_cjkspacer(self, node):
+        pass
+
+    app.add_node(cjkspacer,
+                 html=(visit_cjkspacer,
+                       depart_cjkspacer))
 
 def setup(app):
+    app.add_config_value('cjkspacer_spacer_str', '<span class="cjkspacer"></span>', 'env', str)
+    app.connect('builder-inited', cjkspacer_init)
     app.connect("doctree-resolved", insert_cjkspacer)
-    app.add_node(cjkspacer,
-                 html=(visit_cjkspacer_html, depart_cjkspacer_html))
     
     return {'parallel_read_safe': True, 'parallel_write_safe': True}
 
