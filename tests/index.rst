@@ -14,11 +14,11 @@ MAIN
                 
 .. |main-without-space| raw:: html
 
-   <span>あいうえおabcdいろはにほへと01234数字:あAいB<span/>
+   <span>あいうえおabcdいろはにほへと01234数字:あAいB</span>
 
 .. |main-with-space| raw:: html
 
-   <span>あいうえお abcd いろはにほへと 01234 数字: あ A い B<span/>
+   <span>あいうえお abcd いろはにほへと 01234 数字: あ A い B</span>
 
 .. raw:: html
    
