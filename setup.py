@@ -2,31 +2,33 @@
 
 from setuptools import setup, find_packages
 
-long_desc = '''
-This package contains the cjkspacer Sphinx extension.
+try:
+    with open('README.md') as f:
+        readme_md = f.read()
+except IOError:
+    readme_md = ''
 
-.. add description here ..
-'''
-
-requires = ['Sphinx>=0.6']
+def _requires_from_file(filename):
+    return open(filename).read().splitlines()
 
 setup(
     name='sphinxcontrib-cjkspacer',
     version='0.1.0',
-    url='http://bitbucket.org/birkenfeld/sphinx-contrib',
+    url='https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer',
     download_url='http://pypi.python.org/pypi/sphinxcontrib-cjkspacer',
-    license='BSD',
+    license='MIT',
     author='tatsushi-ikeda',
     author_email='ikeda.tatsushi.37u@kyoto-u.jp',
     description='Sphinx "cjkspacer" extension',
-    long_description=long_desc,
+    long_description=readme_md,
+    long_description_content_type='text/markdown',
     zip_safe=False,
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Console',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Documentation',
@@ -35,6 +37,6 @@ setup(
     platforms='any',
     packages=find_packages(),
     include_package_data=True,
-    install_requires=requires,
+    install_requires=_requires_from_file('requirements.txt'),
     namespace_packages=['sphinxcontrib'],
 )
