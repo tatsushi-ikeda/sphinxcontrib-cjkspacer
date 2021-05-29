@@ -55,5 +55,3 @@ html_static_path = ['_static']
 
 extensions += ['sphinxcontrib.trimblank', 'sphinxcontrib.cjkspacer']
 html_css_files   = ['custom.css']
-
-cjkspacer_spacer_str = '&thinsp;'

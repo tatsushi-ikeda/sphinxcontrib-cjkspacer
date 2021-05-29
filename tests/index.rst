@@ -123,22 +123,22 @@ PARENTHESES & PUNCTUATION
 ------------------------------------------------------------
 .. code-block:: ReST
 
-   括弧(Parenthesies):Parenthesis(括弧),コンマ,ピリオド.読点、句点。
+   括弧(Parenthesies):Parenthesis(括弧),コンマ,ピリオド.読点、句点。 スペース Space.
 
 .. |pp-without-space| raw:: html
 
-   括弧(Parentheses):Parentheses(括弧),コンマ,ピリオド.読点、句点。
+   括弧(Parentheses):Parentheses(括弧),コンマ,ピリオド.読点、句点。  スペース  Space.
 
 .. |pp-with-space| raw:: html
 
-   括弧 (Parentheses) : Parentheses (括弧) , コンマ , ピリオド. 読点、句点。
+   括弧 (Parentheses) : Parentheses (括弧) , コンマ , ピリオド. 読点、句点。スペース Space.
 
 .. raw:: html
    
    <div class='cjkspacer-sample'>
 
 1. |pp-without-space|
-2. 括弧(Parentheses):Parentheses(括弧),コンマ,ピリオド.読点、句点。
+2. 括弧(Parentheses):Parentheses(括弧),コンマ,ピリオド.読点、句点。  スペース  Space.
 3. |pp-with-space|
 
 .. raw:: html
