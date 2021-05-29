@@ -75,7 +75,7 @@ extensions += ['sphinxcontrib.cjkspacer']
     
     These three elements decide the boundaries between the CJK characters and the others characters.
     
-    If regurar expressions
+    If regular expressions
     
     -  `f'[^{cjkspacer_before_exception}{cjkspacer_cjk_characters}][{cjkspacer_cjk_characters}']`
 
