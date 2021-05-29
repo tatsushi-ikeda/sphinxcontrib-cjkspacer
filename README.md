@@ -168,7 +168,7 @@ Instead, they are included into `cjkspacer_before_exception` and `cjkspacer_afte
 
     | Unicode  | Character | Name                |
     |:--------:|:---------:|:-------------------:|
-    | `\u30FB` | ・        | KATAKANA MIDDLE DOT |
+    | `\u30FB` | ・        | Katakana Middle Dot |
 
 - Exceptions among *Halfwidth and Fullwidth Forms* (`\uFF00-\uFF60`, `\uFFE0-\uFFE6`)
 
