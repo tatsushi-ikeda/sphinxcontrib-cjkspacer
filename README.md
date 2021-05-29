@@ -1,3 +1,4 @@
+[![CI](https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer/actions/workflows/main.yml/badge.svg)](https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer/actions/workflows/main.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # sphinxcontrib-cjkspacer
@@ -11,7 +12,7 @@ This Sphinx extension provides an alternative function to adjust such distances.
 
 This extension is inspired by [sphinxcontrib-trimblank](https://github.com/amedama41/sphinxcontrib-trimblank).
 The combination betweeen `sphinxcontrib-trimblank` and `sphinxcontrib-cjkspacer` should work well for the `html` builders:
-`sphinxcontrib-trimblank` removes redundant spaces caused by the limitation of the reStructuredText syntax, and then `sphinxcontrib-cjkspacer` adjusts distances between characters (See demo).
+`sphinxcontrib-trimblank` removes redundant spaces caused by the limitation of the reStructuredText syntax, and then `sphinxcontrib-cjkspacer` adjusts distances between characters (See ([demo](https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/))).
 
 ## Install
 
@@ -28,7 +29,7 @@ extensions += ['sphinxcontrib.cjkspacer']
 ```
 
 ## Example
-demo
+[tests/](https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer/tree/master/tests): ([demo](https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/))
 
 ## Configuration
 
