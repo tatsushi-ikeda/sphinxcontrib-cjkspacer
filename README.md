@@ -31,6 +31,21 @@ extensions += ['sphinxcontrib.cjkspacer']
 ## Example
 [tests/](https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer/tree/master/tests): ([demo](https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/))
 
+- In `conf.py`
+
+    ```Python
+    extensions += ['sphinxcontrib.trimblank', 'sphinxcontrib.cjkspacer']
+    html_css_files = ['custom.css']
+    ```
+    
+- In `_static/custom.css`
+
+    ```CSS
+    .cjkspacer {
+        padding-right: 0.13em;
+    }
+    ```
+
 ## Configuration
 
 - `cjkspacer_spacer`: (default: `{'html':'<span class="cjkspacer"></span>'}`)
