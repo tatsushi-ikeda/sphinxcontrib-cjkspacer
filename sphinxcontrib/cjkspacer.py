@@ -56,7 +56,7 @@ class CJKSpacerVisitor(nodes.GenericNodeVisitor):
         self.default_visit(node)
 
     def _insert_cjkspacer(self, node):
-        target_inline_elems = (nodes.emphasis, nodes.strong)
+        target_inline_elems = (nodes.emphasis, nodes.strong, nodes.inline, nodes.reference)
         num_children = len(node.children)
         new_children = []
         for idx, child in enumerate(node.children):
