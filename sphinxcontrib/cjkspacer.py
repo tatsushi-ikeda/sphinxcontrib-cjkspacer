@@ -134,8 +134,12 @@ class CJKSpacerVisitor(nodes.GenericNodeVisitor):
             new_child = list(chain.from_iterable(zip_longest((nodes.Text(sep)
                                                               for sep in self._cjk_boundary.split(new_txt) if sep),
                                                              [], fillvalue=self._spacer)))[:-1]
-            if idx - 1 >= 0:
-                prev_txt = node.children[idx - 1].astext()
+            if len(new_children) > 0:
+                prev_txt = new_children[-1].astext()
+                if (not prev_txt
+                    and isinstance(new_children[-1], nodes.target)
+                    and len(new_children) > 1):
+                    prev_txt = new_children[-2].astext()
                 if prev_txt and self._cjk_boundary.check_boundary(prev_txt, new_txt):
                     new_child = [self._spacer] + new_child
             if idx + 1 < num_children:
