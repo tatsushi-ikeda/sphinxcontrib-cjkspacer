@@ -3,7 +3,7 @@ Welcome to Test for sphinxcontrib.cjkspacer
 ============================================================
 
 1. without space
-2. with `sphinxcontrib.trimblank` and `sphinxcontrib.cjkpacer`
+2. with `sphinxcontrib.trimblank` and `sphinxcontrib.cjkspacer`
 3. with half-width space
 
 MAIN
