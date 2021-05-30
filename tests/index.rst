@@ -7,7 +7,7 @@ Japanese Demo (日本語デモ) for `sphinxcontrib.cjkspacer`
 .. raw:: html
 
    <input id="toggle" type='checkbox'/>
-   <span class="cjkspacer-toggle"><strong>Click this to Highlight the inserted spacers (挿入されたspacer<span class="cjkspacer"></span>を強調表示)</strong></span>
+   <span class="cjkspacer-toggle"><strong>Click this to highlight the inserted spacers (チェックを入れて挿入されたspacer<span class="cjkspacer"></span>を強調表示)</strong></span>
          
 From `README.md <https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer/blob/master/README.md>`_
 ===================================================================================================
