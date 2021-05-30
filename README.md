@@ -80,7 +80,7 @@ extensions += ['sphinxcontrib.cjkspacer']
     }
     ```
     may be closer to the definition we need.
-    In the most cases, however, we cannot specify such a small `font-size` value.
+    In most cases, however, we cannot specify such a small `font-size` value.
     Of course you can use other space characters, like the thin space character `\u2009`.
     If you need, you can specify the width numerically as the following example:
     ```CSS
