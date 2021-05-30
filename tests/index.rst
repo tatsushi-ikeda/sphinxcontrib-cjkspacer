@@ -12,7 +12,7 @@ Homepage: https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer
 .. raw:: html
 
    <input id="toggle" type='checkbox'/>
-   <span>highlight spacer (spacer<span class="cjkspacer"></span>を強調表示)</span>
+   <span>Highlight the inserted spacers (挿入されたspacer<span class="cjkspacer"></span>を強調表示)</span>
          
 From `README.md <https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer/blob/master/README.md>`_
 ===================================================================================================
@@ -43,7 +43,6 @@ Without the extensions
     <p>ただし、現状では<a class="reference external" href="https://www.w3.org/TR/2009/NOTE-jlreq-20090604/ja/">組版処理の要件(日本語版)</a>に記載されているような高度な調整は行っておらず、2種の判断基準による1種類の空き量しか導入していません。CSS3で延期された<cite>text-spacing</cite>が今後CSS4などで導入されればこの拡張は不要になることでしょう。</p>
     </div>
     </blockquote>
-
 
 Demo
 ============================================================
