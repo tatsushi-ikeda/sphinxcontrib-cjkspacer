@@ -12,7 +12,7 @@ Homepage: https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer
 .. raw:: html
 
    <input id="toggle" type='checkbox'/>
-   <span>highlight spacer (spacerを強調表示)</span>
+   <span>highlight spacer (spacer<span class="cjkspacer"></span>を強調表示)</span>
          
 From `README.md <https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer/blob/master/README.md>`_
 ===================================================================================================
