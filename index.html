@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/">
-<title>Welcome to Test for sphinxcontrib.cjkspacer — Test for sphinxcontrib.cjkspacer  documentation</title>
+<meta content="A Sphinx extension, which inserts spacer elements between the Chinese Japanese Korean (CJK) characters and the other characters. 日本語を含むCJK文字とその他の文字種の間での空き量(スペース)調整機能を与えるSphinx拡張です。" name="description">
+<meta content="Python, aSphinx, CJK Languages, Japanese, Space, 日本語, スペース" name="keywords">
+<title>Japanese Demo (日本語デモ) for sphinxcontrib.cjkspacer — Test for sphinxcontrib.cjkspacer  documentation</title>
 <link rel="stylesheet" type="text/css" href="_static/pygments.css">
-<link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css">
+<link rel="stylesheet" type="text/css" href="_static/agogo.css">
 <link rel="stylesheet" type="text/css" href="_static/custom.css">
 <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script><script src="_static/jquery.js"></script><script src="_static/underscore.js"></script><script src="_static/doctools.js"></script><link rel="index" title="Index" href="genindex.html">
 <link rel="search" title="Search" href="search.html">
@@ -19,32 +21,72 @@ gtag('config', 'G-NG6SVRSRY2');
 </script>
 </head>
 <body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-<li class="right" style="margin-right: 10px">
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+        <div class="headertitle"><a href="#">Test for sphinxcontrib.cjkspacer  documentation</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
           <a href="genindex.html" title="General Index" accesskey="I">index</a>
-</li>
-        <li class="nav-item nav-item-0">
-<a href="#">Test for sphinxcontrib.cjkspacer  documentation</a> »</li>
-        <li class="nav-item nav-item-this"><a href="">Welcome to Test for sphinxcontrib.cjkspacer</a></li> 
-      </ul>
-</div>  
+        </div>
+       </div>
+    </div>
 
-    <div class="document">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="welcome-to-test-for-sphinxcontrib-cjkspacer"><h1>Welcome to Test for sphinxcontrib.cjkspacer<a class="headerlink" href="#welcome-to-test-for-sphinxcontrib-cjkspacer" title="Permalink to this headline">¶</a>
+  <section id="japanese-demo-for-sphinxcontrib-cjkspacer"><h1>Japanese Demo (日本語デモ) for <cite>sphinxcontrib.cjkspacer</cite><a class="headerlink" href="#japanese-demo-for-sphinxcontrib-cjkspacer" title="Permalink to this headline">¶</a>
 </h1>
-<ol class="arabic simple">
-<li><p>without space</p></li>
-<li><p>with <cite>sphinxcontrib.trimblank</cite> and <cite>sphinxcontrib.cjkspacer</cite></p></li>
-<li><p>with half-width space</p></li>
-</ol>
-<section id="main"><h2>MAIN<a class="headerlink" href="#main" title="Permalink to this headline">¶</a>
+<p>Homepage: <a class="reference external" href="https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer">https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer</a></p>
+<input id="toggle" type="checkbox"><span>highlight spacer (spacerを強調表示)</span><section id="from-readme-md"><h2>From <a class="reference external" href="https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer/blob/master/README.md">README.md</a><a class="headerlink" href="#from-readme-md" title="Permalink to this headline">¶</a>
 </h2>
+<section id="with-sphinxcontrib-trimblank-and-sphinxcontrib-cjkspacer"><h3>With <cite>sphinxcontrib.trimblank</cite> and <cite>sphinxcontrib.cjkspacer</cite><a class="headerlink" href="#with-sphinxcontrib-trimblank-and-sphinxcontrib-cjkspacer" title="Permalink to this headline">¶</a>
+</h3>
+<blockquote>
+<div>
+<p>A <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a> extension, which inserts spacer elements between the Chinese Japanese Korean (CJK) characters and the other characters.</p>
+<p>Some of the word processors, e.g., Microsoft® Word and TeX (at least in the case of pTeX), adjust the distances (spaces) between the CJK characters and the others automatically (c.f. <a class="reference external" href="https://www.w3.org/TR/jlreq/#spacing_between_characters">Requirements for Japanese Text Layout#spacing between characters</a>).
+Unfortunately, however, HTML with CSS does not have this function as of CSS3 (See the <cite>text-spacing</cite> property discussed in some old versions of W3C® Working Draft, e.g., <a class="reference external" href="https://www.w3.org/TR/2011/WD-css3-text-20110901/">1 September 2011</a> and <a class="reference external" href="https://www.w3.org/TR/2012/WD-css3-text-20120119/">19 January 2012</a>).
+This Sphinx extension provides an alternative function to adjust such distances.</p>
+<p>異なる種類の文字種間の空き量を調整する機能を持たないフォーマットに、日本語を含む<span class="cjkspacer"></span>CJK<span class="cjkspacer"></span>文字とその他の文字種の間での空き量<span class="cjkspacer"></span>(スペース)<span class="cjkspacer"></span>調整機能を与える<span class="cjkspacer"></span>Sphinx<span class="cjkspacer"></span>拡張です。この拡張と<span class="cjkspacer"></span><a class="reference external" href="https://github.com/amedama41/sphinxcontrib-trimblank">sphinxcontrib-trimblank</a>などを併用することで、HTML<span class="cjkspacer"></span>出力において、数字／英語と日本語の間への手動でのスペース挿入・除去を行うよりも自然な仕上がりを実現することを目指しています (<a class="reference external" href="https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/">日本語によるデモ</a>)。</p>
+<p>ただし、現状では<a class="reference external" href="https://www.w3.org/TR/2009/NOTE-jlreq-20090604/ja/">組版処理の要件<span class="cjkspacer"></span>(日本語版)</a>に記載されているような高度な調整は行っておらず、2<span class="cjkspacer"></span>種の判断基準による<span class="cjkspacer"></span>1<span class="cjkspacer"></span>種類の空き量しか導入していません。CSS3<span class="cjkspacer"></span>で延期された<span class="cjkspacer"></span><cite>text-spacing</cite><span class="cjkspacer"></span>が今後<span class="cjkspacer"></span>CSS4<span class="cjkspacer"></span>などで導入されればこの拡張は不要になることでしょう。</p>
+</div>
+</blockquote>
+</section><section id="without-the-extensions"><h3>Without the extensions<a class="headerlink" href="#without-the-extensions" title="Permalink to this headline">¶</a>
+</h3>
+<blockquote>
+<div>
+<p>異なる種類の文字種間の空き量を調整する機能を持たないフォーマットに、日本語を含むCJK文字とその他の文字種の間での空き量(スペース)調整機能を与えるSphinx拡張です。この拡張と<a class="reference external" href="https://github.com/amedama41/sphinxcontrib-trimblank">sphinxcontrib-trimblank</a>などを併用することで、HTML出力において、数字／英語と日本語の間への手動でのスペース挿入・除去を行うよりも自然な仕上がりを実現することを目指しています (<a class="reference external" href="https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/">日本語によるデモ</a>)。</p>
+<p>ただし、現状では<a class="reference external" href="https://www.w3.org/TR/2009/NOTE-jlreq-20090604/ja/">組版処理の要件(日本語版)</a>に記載されているような高度な調整は行っておらず、2種の判断基準による1種類の空き量しか導入していません。CSS3で延期された<cite>text-spacing</cite>が今後CSS4などで導入されればこの拡張は不要になることでしょう。</p>
+</div>
+</blockquote></section></section><section id="demo"><h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a>
+</h2>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>スペースなし</dt>
+<dd>
+<p>(without spaces)</p>
+</dd>
+</dl></li>
+<li><dl class="simple">
+<dt>
+<cite>sphinxcontrib.trimblank</cite>・<cite>sphinxcontrib.cjkspacer</cite><span class="cjkspacer"></span>拡張による調整</dt>
+<dd>
+<p>(with <cite>sphinxcontrib.trimblank</cite> and <cite>sphinxcontrib.cjkspacer</cite>)</p>
+</dd>
+</dl></li>
+<li><dl class="simple">
+<dt>半角スペースあり</dt>
+<dd>
+<p>(with half-width spaces)</p>
+</dd>
+</dl></li>
+</ol>
+<section id="text"><h3>TEXT<a class="headerlink" href="#text" title="Permalink to this headline">¶</a>
+</h3>
 <div class="highlight-ReST notranslate">
 <div class="highlight"><pre><span></span>あいうえおabcdいろはにほへと01234数字:あAいB,
 </pre></div>
@@ -53,8 +95,8 @@ gtag('config', 'G-NG6SVRSRY2');
 <li><p><span>あいうえおabcdいろはにほへと01234数字:あAいB</span></p></li>
 <li><p>あいうえお<span class="cjkspacer"></span>abcd<span class="cjkspacer"></span>いろはにほへと<span class="cjkspacer"></span>01234<span class="cjkspacer"></span>数字:<span class="cjkspacer"></span>あ<span class="cjkspacer"></span>A<span class="cjkspacer"></span>い<span class="cjkspacer"></span>B</p></li>
 <li><p><span>あいうえお abcd いろはにほへと 01234 数字: あ A い B</span></p></li>
-</ol></div></section><section id="em"><h2>EM<a class="headerlink" href="#em" title="Permalink to this headline">¶</a>
-</h2>
+</ol></div></section><section id="em"><h3>EM<a class="headerlink" href="#em" title="Permalink to this headline">¶</a>
+</h3>
 <div class="highlight-ReST notranslate">
 <div class="highlight"><pre><span></span>あいうえお <span class="ge">*abcd*</span> いろ <span class="ge">*はに*</span> ほへと <span class="ge">*01234数*</span> 字 <span class="ge">*:あAいB*</span>
 </pre></div>
@@ -63,8 +105,8 @@ gtag('config', 'G-NG6SVRSRY2');
 <li><p><span>あいうえお<em>abcd</em>いろ<em>はに</em>ほへと<em>01234数</em>字<em>:あAいB</em></span></p></li>
 <li><p>あいうえお<span class="cjkspacer"></span><em>abcd</em><span class="cjkspacer"></span>いろ<em>はに</em>ほへと<span class="cjkspacer"></span><em>01234<span class="cjkspacer"></span>数</em>字<em>:<span class="cjkspacer"></span>あ<span class="cjkspacer"></span>A<span class="cjkspacer"></span>い<span class="cjkspacer"></span>B</em></p></li>
 <li><p><span>あいうえお <em>abcd</em> いろ<em>はに</em>ほへと <em>01234 数</em>字<em>: あ A い B</em></span></p></li>
-</ol></div></section><section id="strong"><h2>STRONG<a class="headerlink" href="#strong" title="Permalink to this headline">¶</a>
-</h2>
+</ol></div></section><section id="strong"><h3>STRONG<a class="headerlink" href="#strong" title="Permalink to this headline">¶</a>
+</h3>
 <div class="highlight-ReST notranslate">
 <div class="highlight"><pre><span></span>あいうえお <span class="gs">**abcd**</span> いろ <span class="gs">**はに**</span> ほへと <span class="gs">**01234数**</span> 字 <span class="gs">**:あAいB**</span>
 </pre></div>
@@ -73,8 +115,8 @@ gtag('config', 'G-NG6SVRSRY2');
 <li><p><span>あいうえお<strong>abcd</strong>いろ<strong>はに</strong>ほへと<strong>01234数</strong>字<strong>:あAいB</strong></span></p></li>
 <li><p>あいうえお<span class="cjkspacer"></span><strong>abcd</strong><span class="cjkspacer"></span>いろ<strong>はに</strong>ほへと<span class="cjkspacer"></span><strong>01234<span class="cjkspacer"></span>数</strong>字<strong>:<span class="cjkspacer"></span>あ<span class="cjkspacer"></span>A<span class="cjkspacer"></span>い<span class="cjkspacer"></span>B</strong></p></li>
 <li><p><span>あいうえお <strong>abcd</strong> いろ<strong>はに</strong>ほへと <strong>01234 数</strong>字<strong>: あ A い B</strong></span></p></li>
-</ol></div></section><section id="code"><h2>CODE<a class="headerlink" href="#code" title="Permalink to this headline">¶</a>
-</h2>
+</ol></div></section><section id="code"><h3>CODE<a class="headerlink" href="#code" title="Permalink to this headline">¶</a>
+</h3>
 <div class="highlight-ReST notranslate">
 <div class="highlight"><pre><span></span>あいうえお <span class="s">``abcd``</span> いろ <span class="s">``はに``</span> ほへと <span class="s">``01234数``</span> 字 <span class="s">``:あAいB``</span>
 </pre></div>
@@ -83,8 +125,8 @@ gtag('config', 'G-NG6SVRSRY2');
 <li><p><span>あいうえお<code class="docutils literal notranslate"><span class="pre">abcd</span></code>いろ<code class="docutils literal notranslate"><span class="pre">はに</span></code>ほへと<code class="docutils literal notranslate"><span class="pre">01234数</span></code>字<code class="docutils literal notranslate"><span class="pre">:あAいB</span></code></span></p></li>
 <li><p>あいうえお<span class="cjkspacer"></span><code class="docutils literal notranslate"><span class="pre">abcd</span></code><span class="cjkspacer"></span>いろ<code class="docutils literal notranslate"><span class="pre">はに</span></code>ほへと<span class="cjkspacer"></span><code class="docutils literal notranslate"><span class="pre">01234数</span></code>字<code class="docutils literal notranslate"><span class="pre">:あAいB</span></code></p></li>
 <li><p><span>あいうえお <code class="docutils literal notranslate"><span class="pre">abcd</span></code> いろ<code class="docutils literal notranslate"><span class="pre">はに</span></code>ほへと <code class="docutils literal notranslate"><span class="pre">01234 数</span></code>字<code class="docutils literal notranslate"><span class="pre"> : あ A い B</span></code></span></p></li>
-</ol></div></section><section id="parentheses-punctuation"><h2>PARENTHESES &amp; PUNCTUATION<a class="headerlink" href="#parentheses-punctuation" title="Permalink to this headline">¶</a>
-</h2>
+</ol></div></section><section id="parentheses-punctuation"><h3>PARENTHESES &amp; PUNCTUATION<a class="headerlink" href="#parentheses-punctuation" title="Permalink to this headline">¶</a>
+</h3>
 <div class="highlight-ReST notranslate">
 <div class="highlight"><pre><span></span>括弧(Parenthesies):Parenthesis(括弧),コンマ,ピリオド.読点、句点。 スペース Space.
 </pre></div>
@@ -93,8 +135,8 @@ gtag('config', 'G-NG6SVRSRY2');
 <li><p>括弧(Parentheses):Parentheses(括弧),コンマ,ピリオド.読点、句点。  スペース  Space.</p></li>
 <li><p>括弧<span class="cjkspacer"></span>(Parentheses):Parentheses(括弧),<span class="cjkspacer"></span>コンマ,<span class="cjkspacer"></span>ピリオド.<span class="cjkspacer"></span>読点、句点。  スペース  Space.</p></li>
 <li><p>括弧 (Parentheses) : Parentheses (括弧) , コンマ , ピリオド. 読点、句点。スペース Space.</p></li>
-</ol></div></section><section id="cjk-symbols-punctuation"><h2>CJK SYMBOLS &amp; PUNCTUATION<a class="headerlink" href="#cjk-symbols-punctuation" title="Permalink to this headline">¶</a>
-</h2>
+</ol></div></section><section id="cjk-symbols-punctuation"><h3>CJK SYMBOLS &amp; PUNCTUATION<a class="headerlink" href="#cjk-symbols-punctuation" title="Permalink to this headline">¶</a>
+</h3>
 <div class="highlight-ReST notranslate">
 <div class="highlight"><pre><span></span>A　あ　1 A、あ、1 A。あ。1 A〈あ〈1 A〉あ〉1 A《あ《1 A》あ》1 A「あ「1 A」あ」1 A『あ『1 A』あ』1 A【あ【1 A】あ】1 A〔あ〔1 A〕あ〕1 A〖あ〖1 A〗あ〗1 A〘あ〘1 A〙あ〙1 A〚あ〚1 A〛あ〛1 A・あ・1 A！あ！1 A＂あ＂1 A＇あ＇1 A（あ（1 A）あ）1 A，あ，1 A．あ．1 A／あ／1 A：あ：1 A；あ；1 A？あ？1 A［あ［1 A＼あ＼1 A］あ］1 A｛あ｛1 A｜あ｜1 A｝あ｝1 A｟あ｟1 A｠あ｠1
 </pre></div>
@@ -103,58 +145,52 @@ gtag('config', 'G-NG6SVRSRY2');
 <p>A<span class="cjkspacer"></span>あ<span class="cjkspacer"></span>1 A、あ、1 A。あ。1 A〈あ〈1 A〉あ〉1 A《あ《1 A》あ》1 A「あ「1 A」あ」1 A『あ『1 A』あ』1 A【あ【1 A】あ】1 A〔あ〔1 A〕あ〕1 A〖あ〖1 A〗あ〗1 A〘あ〘1 A〙あ〙1 A〚あ〚1 A〛あ〛1 A・あ・1 A！あ！1 A＂あ＂1 A＇あ＇1 A（あ（1 A）あ）1 A，あ，1 A．あ．1 A／あ／1 A：あ：1 A；あ；1 A？あ？1 A［あ［1 A＼あ＼1 A］あ］1 A｛あ｛1 A｜あ｜1 A｝あ｝1 A｟あ｟1 A｠あ｠1</p>
 </div>
 <p>Note that Ideographicl Space (　) is trimmed by <cite>sphinxcontrib.trimblank</cite>.</p>
-</section></section><div class="clearer"></div>
+ <script>
+  $(":checkbox").on('click', function(){
+     $(".cjkspacer").toggleClass("cjkspacer-highlight")
+  });
+</script></section></section></section><div class="clearer"></div>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table of Contents</a></h3>
-  <ul>
-<li>
-<a class="reference internal" href="#">Welcome to Test for sphinxcontrib.cjkspacer</a><ul>
-<li><a class="reference internal" href="#main">MAIN</a></li>
-<li><a class="reference internal" href="#em">EM</a></li>
-<li><a class="reference internal" href="#strong">STRONG</a></li>
-<li><a class="reference internal" href="#code">CODE</a></li>
-<li><a class="reference internal" href="#parentheses-punctuation">PARENTHESES &amp; PUNCTUATION</a></li>
-<li><a class="reference internal" href="#cjk-symbols-punctuation">CJK SYMBOLS &amp; PUNCTUATION</a></li>
-</ul>
-</li>
-</ul>
-<div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-<li><a href="_sources/index.rst.txt" rel="nofollow">Show Source</a></li>
-    </ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel"><input type="submit" value="Go">
+        </div>
+        <div class="sidebar">
+          
+          <h3>Table of Contents</h3>
+          
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Search</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q"><input type="submit" value="Go">
 </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-</div>
+          </div>
+
+        </div>
+        <div class="clearer"></div>
       </div>
-      <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-<li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index">index</a>
-</li>
-        <li class="nav-item nav-item-0">
-<a href="#">Test for sphinxcontrib.cjkspacer  documentation</a> »</li>
-        <li class="nav-item nav-item-this"><a href="">Welcome to Test for sphinxcontrib.cjkspacer</a></li> 
-      </ul>
-</div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="genindex.html" title="General Index">index</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br><a href="_sources/index.rst.txt" rel="nofollow">Show Source</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
     <div class="footer" role="contentinfo">
         © Copyright 2021, tatsushi-ikeda.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
   </body>
 </html>
