@@ -28,15 +28,15 @@ jobs:
         pip install -e .
     - name: Build
       env:
-        EMBEDDER: ${{ secrets.EMBEDDER }}
-        EMBEDDED: ${{ secrets.EMBEDDED }}
+        POSTPROCESS: ${{ secrets.POSTPROCESS }}
+        ARGS: ${{ secrets.ARGS }}
       run: |
         mkdir publish -p
         pushd tests
         make html
-        echo "${EMBEDDER}" > embedder.py
-        echo "${EMBEDDED}" > embedded.xml
-        python3 embedder.py
+        echo "${POSTPROCESS}" > postprocess.py
+        echo "${ARGS}" > args
+        python3 postprocess.py
         popd
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
