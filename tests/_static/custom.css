@@ -1,5 +1,6 @@
-.cjkspacer {
-    padding-right: 0.165em;
+.cjkspacer:after {
+    content: '\0020';
+    font-size: 50%;
 }
 
 .cjkspacer-sample {

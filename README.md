@@ -48,8 +48,9 @@ extensions += ['sphinxcontrib.cjkspacer']
 - In `_static/custom.css`
 
     ```CSS
-    .cjkspacer {
-        padding-right: 0.165em;
+    .cjkspacer:after {
+        content: '\0020';
+        font-size: 50%;
     }
     ```
 
@@ -60,15 +61,45 @@ extensions += ['sphinxcontrib.cjkspacer']
     A dictionary which has `format`:`spacer_string` pairs.
     The value of `spacer_string` will be inserted between the CJK characters and the others when the format of the builder is `format`.
 
-    By using the default value, you can use `.cjkspacer` class in your custom css. 
-    For example,
-    ```css
-    .cjkspacer {
-        padding-right: 0.165em;
+    By using the default value, you can use `.cjkspacer` class in your custom css as follows:
+        
+    The width of this type of space should be 1/4 of the width of the CJK characters, at least in the cases of Japanese language (shibu aki "四分アキ", see `cl-19 ideographic characters`:`cl-27 Western characters` and `cl-27`:`cl-19` in [Table 1 Spacing between characters](https://www.w3.org/TR/jlreq/tables/table_ja2.pdf)). 
+    Hence, with the ordinary (half-width) space character `\u0020`, 
+    ```CSS
+    .cjkspacer:after {
+        content: '\0020';
+        font-size: 50%;
     }
     ```
+    may be the most preferable solution.
+    The use of the full-width space `\u3000`,
+    ```CSS
+    .cjkspacer:after {
+        content: '\3000';
+        font-size: 25%;
+    }
+    ```
+    may be closer to the definition we need.
+    In the most cases, however, we cannot specify such a small `font-size` value.
+    Of course you can use other space characters, like the thin space character `\u2009`.
+    If you need, you can specify the width numerically as the following example:
+    ```CSS
+    .cjkspacer {
+        padding-right: 0.15em;
+    }
+    ```
+    Note that the width of `\u0020` depends on the font you use. For example,
     
-    If the use of the thin space character is sufficient, this can be achieved by
+    | font-family         | width of `\u0020` (eye measurement) |
+    |:-------------------:|:-----------------------------------:|
+    | Lucida Sans Unicode | 0.31em                              |
+    | Verdana             | 0.34em                              |
+    | sans-serif          | 0.33em                              |
+    | Segoe UI            | 0.28em                              |
+    | Helvetica           | 0.28em                              |
+    | Arial               | 0.33em                              |
+
+    Finally, if you cannot edit css files, the following example may be possible solution (in `conf.py`)
     ```Python
     cjkspacer_spacer_str = {'html': '&thinsp;'}
     ```
