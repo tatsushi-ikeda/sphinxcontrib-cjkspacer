@@ -89,9 +89,11 @@ extensions += ['sphinxcontrib.cjkspacer']
 
 In the default configuration, we employ relatively simple rules.
 
-If a CJK character is *preceded* by a **space** (`\s`), **newline** (`\n`), or **opening parenthesis** (`({\[`), we do not insert a spacer *before* the CJK character.
+If a CJK character is *preceded* by a **space** (` \t\f\v`), **newline** (`\n\r`), or **opening parenthesis** (`({[`), we do not insert a spacer *before* the CJK character.
 
-If a CJK character is *followed* by a **space** (`\s`), **newline** (`\n`), **closing parenthesis** (`[)}\]]`), or **punctuation** (`,.:;!?`), we do not insert a spacer *after* the CJK character.
+If a CJK character is *followed* by a **space** (` \t\f\v`), **newline** (`\n\r`), **closing parenthesis** (`)}]`), or **punctuation** (`,.:;!?`), we do not insert a spacer *after* the CJK character.
+
+Here, we do not use `r'\s'` instead of `' \t\f\v'`, because `r'\s'` also matches *Ideographicl Space* (`\u3000`, 　).
 
 The following Unicode blocks are adopted as the CJK characters in the default value of `cjkspacer_cjk_characters`:
 
