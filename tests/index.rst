@@ -2,17 +2,12 @@
 Japanese Demo (日本語デモ) for `sphinxcontrib.cjkspacer`
 ============================================================
 
-.. meta::
-   :description: A Sphinx extension, which inserts spacer elements between the Chinese Japanese Korean (CJK) characters and the other characters. 日本語を含むCJK文字とその他の文字種の間での空き量(スペース)調整機能を与えるSphinx拡張です。
-   :keywords: Python, Sphinx, CJK Languages, Japanese, Space, 日本語, スペース
-
-Homepage: https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer
-
+`Homepage <https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer>`_
 
 .. raw:: html
 
    <input id="toggle" type='checkbox'/>
-   <span>Highlight the inserted spacers (挿入されたspacer<span class="cjkspacer"></span>を強調表示)</span>
+   <span class="cjkspacer-toggle"><strong>Click this to Highlight the inserted spacers (挿入されたspacer<span class="cjkspacer"></span>を強調表示)</strong></span>
          
 From `README.md <https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer/blob/master/README.md>`_
 ===================================================================================================
