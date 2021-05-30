@@ -3,7 +3,7 @@ Welcome to Test for sphinxcontrib.cjkspacer
 ============================================================
 
 1. without space
-2. with sphinxcontrib.trimblank and sphinxcontrib.cjkpacer
+2. with `sphinxcontrib.trimblank` and `sphinxcontrib.cjkpacer`
 3. with half-width space
 
 MAIN
@@ -144,3 +144,21 @@ PARENTHESES & PUNCTUATION
 .. raw:: html
    
    </div>
+
+CJK SYMBOLS & PUNCTUATION
+------------------------------------------------------------
+.. code-block:: ReST
+
+   A　あ　1 A、あ、1 A。あ。1 A〈あ〈1 A〉あ〉1 A《あ《1 A》あ》1 A「あ「1 A」あ」1 A『あ『1 A』あ』1 A【あ【1 A】あ】1 A〔あ〔1 A〕あ〕1 A〖あ〖1 A〗あ〗1 A〘あ〘1 A〙あ〙1 A〚あ〚1 A〛あ〛1 A・あ・1 A！あ！1 A＂あ＂1 A＇あ＇1 A（あ（1 A）あ）1 A，あ，1 A．あ．1 A／あ／1 A：あ：1 A；あ；1 A？あ？1 A［あ［1 A＼あ＼1 A］あ］1 A｛あ｛1 A｜あ｜1 A｝あ｝1 A｟あ｟1 A｠あ｠1
+                
+.. raw:: html
+   
+   <div class='cjkspacer-sample'>
+
+A　あ　1 A、あ、1 A。あ。1 A〈あ〈1 A〉あ〉1 A《あ《1 A》あ》1 A「あ「1 A」あ」1 A『あ『1 A』あ』1 A【あ【1 A】あ】1 A〔あ〔1 A〕あ〕1 A〖あ〖1 A〗あ〗1 A〘あ〘1 A〙あ〙1 A〚あ〚1 A〛あ〛1 A・あ・1 A！あ！1 A＂あ＂1 A＇あ＇1 A（あ（1 A）あ）1 A，あ，1 A．あ．1 A／あ／1 A：あ：1 A；あ；1 A？あ？1 A［あ［1 A＼あ＼1 A］あ］1 A｛あ｛1 A｜あ｜1 A｝あ｝1 A｟あ｟1 A｠あ｠1
+
+.. raw:: html
+   
+   </div>
+
+Note that Ideographicl Space (　) is trimmed by `sphinxcontrib.trimblank`.

@@ -69,23 +69,23 @@ extensions += ['sphinxcontrib.cjkspacer']
 
 - `cjkspacer_cjk_characters`
 
-- `cjkspacer_before_exception`
+- `cjkspacer_before_exceptions`
 
-- `cjkspacer_after_exception`
+- `cjkspacer_after_exceptions`
     
     These three elements decide the boundaries between the CJK characters and the other characters.
     
     If regular expressions
     
-    -  `f'[^{cjkspacer_before_exception}{cjkspacer_cjk_characters}][{cjkspacer_cjk_characters}']`
+    -  `f'[^{cjkspacer_before_exceptions}{cjkspacer_cjk_characters}][{cjkspacer_cjk_characters}']`
 
     or 
 
-    -  `f'[{cjkspacer_cjk_characters}'][^{cjkspacer_after_exception}{cjkspacer_cjk_characters}]`
+    -  `f'[{cjkspacer_cjk_characters}'][^{cjkspacer_after_exceptions}{cjkspacer_cjk_characters}]`
     
     match parts of texts, they are regarded as the boundaries.
     
-### Default values of `cjkspacer_cjk_characters`, `cjkspacer_before_exception`, and `cjkspacer_after_exception`
+### Default values of `cjkspacer_cjk_characters`, `cjkspacer_before_exceptions`, and `cjkspacer_after_exceptions`
 
 In the default configuration, we employ relatively simple rules.
 
@@ -138,7 +138,7 @@ The following block is also included into `cjkspacer_cjk_characters` for consist
     | `\u2460`  | `\u24FF`  | ①      | Enclosed Alphanumerics                           |
 
 The following characters are eliminated from `cjkspacer_cjk_characters` since they are spaces, punctuation, and parentheses. 
-Instead, they are included into `cjkspacer_before_exception` and `cjkspacer_after_exception`.
+Instead, they are included into `cjkspacer_before_exceptions` and `cjkspacer_after_exceptions`.
 
 - Exceptions among *CJK symbols and punctuation* (`\u3000-\u303F`)
 
@@ -199,9 +199,9 @@ Instead, they are included into `cjkspacer_before_exception` and `cjkspacer_afte
 Thus, we set the following as the default configuration.
 
 ```Python
-cjkspacer_cjk_characters   = r'\u2460-\u24FF\u2E80-\u2FFF\u3003-\u3007\u3012\u3013\u301C-\u9FFF\uF900-\uFAFF\uFF00\uFF03-\uFF06\uFF0A\uFF0B\uFF0D\uFF10-\uFF19\uFF1C\uFF1D\uFF1E\uFF20-\uFF3A\uFF3E-\uFF5A\uFF5E\uFFE0-\uFFE6\U00020000-\U0002A6DF\U0002A700-\U0002EBEF\U0002F800-\U0002FA1F\U00030000-\U0003134F'
-cjkspacer_before_exception = r'\s\n({\[\u3000\u3001\u3002\u3008-\u3011\u3014-\u301B\u30FB\uFF01\uFF02\uFF07\uFF08\uFF09\uFF0C\uFF0E\uFF0F\uFF1A\uFF1B\uFF1F\uFF3B\uFF3C\uFF3D\uFF5B\uFF5C\uFF5D\uFF5F\uFF60'
-cjkspacer_after_exception  = r'\s\n)}\],.:;!?\u3000\u3001\u3002\u3008-\u3011\u3014-\u301B\u30FB\uFF01\uFF02\uFF07\uFF08\uFF09\uFF0C\uFF0E\uFF0F\uFF1A\uFF1B\uFF1F\uFF3B\uFF3C\uFF3D\uFF5B\uFF5C\uFF5D\uFF5F\uFF60'
+cjkspacer_cjk_characters    = r'\u2460-\u24FF\u2E80-\u2FFF\u3003-\u3007\u3012\u3013\u301C-\u30FA\u30FC-\u9FFF\uF900-\uFAFF\uFF00\uFF03-\uFF06\uFF0A\uFF0B\uFF0D\uFF10-\uFF19\uFF1C\uFF1D\uFF1E\uFF20-\uFF3A\uFF3E-\uFF5A\uFF5E\uFFE0-\uFFE6\U00020000-\U0002A6DF\U0002A700-\U0002EBEF\U0002F800-\U0002FA1F\U00030000-\U0003134F'
+cjkspacer_before_exceptions = ' \t\f\v\n\r' + r'({\[\u3000\u3001\u3002\u3008-\u3011\u3014-\u301B\u30FB\uFF01\uFF02\uFF07\uFF08\uFF09\uFF0C\uFF0E\uFF0F\uFF1A\uFF1B\uFF1F\uFF3B\uFF3C\uFF3D\uFF5B\uFF5C\uFF5D\uFF5F\uFF60'
+cjkspacer_after_exceptions  = ' \t\f\v\n\r' + r')}\],.:;!?\u3000\u3001\u3002\u3008-\u3011\u3014-\u301B\u30FB\uFF01\uFF02\uFF07\uFF08\uFF09\uFF0C\uFF0E\uFF0F\uFF1A\uFF1B\uFF1F\uFF3B\uFF3C\uFF3D\uFF5B\uFF5C\uFF5D\uFF5F\uFF60'
 ```
 
 ## License
