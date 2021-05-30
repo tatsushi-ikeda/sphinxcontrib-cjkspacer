@@ -2,16 +2,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # sphinxcontrib-cjkspacer
-A Sphinx extension, which inserts spacer elements between the Chinese Japanese Korean (CJK) characters and the other characters.
+A [Sphinx](https://www.sphinx-doc.org/en/master/) extension, which inserts spacer elements between the Chinese Japanese Korean (CJK) characters and the other characters.
 
-Some of the word processors, e.g., Microsoft® Word and TeX (at least in the case of pTeX), adjust the distances between the CJK characters and the others automatically (c.f. [Requirements for Japanese Text Layout#spacing between characters](https://www.w3.org/TR/jlreq/#spacing_between_characters)).
+Some of the word processors, e.g., Microsoft® Word and TeX (at least in the case of pTeX), adjust the distances (spaces) between the CJK characters and the others automatically (c.f. [Requirements for Japanese Text Layout#spacing between characters](https://www.w3.org/TR/jlreq/#spacing_between_characters)).
 Unfortunately, however, HTML with CSS does not have this function as of CSS3 (See the `text-spacing` property discussed in some old versions of W3C® Working Draft, e.g., [1 September 2011](https://www.w3.org/TR/2011/WD-css3-text-20110901/) and [19 January 2012](https://www.w3.org/TR/2012/WD-css3-text-20120119/)).
 This Sphinx extension provides an alternative function to adjust such distances.
 
-=======
 ### Description for Japanese
 > 異なる種類の文字種間の空き量(スペース)を調整する機能を持たないフォーマットに、日本語を含むCJK文字とその他の文字種の間での空き量調整機能を与える[Sphinx](https://www.sphinx-doc.org/ja/master/)拡張です。
-> この拡張と[sphinxcontrib-trimblank](https://github.com/amedama41/sphinxcontrib-trimblank)などを併用することで、HTML出力において、数字／英語と日本語の間への手動での半角スペース挿入・除去を行うよりも自然な仕上がりを実現することを目指しています([日本語によるデモ](https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/))。
+> この拡張と[sphinxcontrib-trimblank](https://github.com/amedama41/sphinxcontrib-trimblank)などを併用することで、HTML出力において、数字／英語と日本語の間への手動でのスペース挿入・除去を行うよりも自然な仕上がりを実現することを目指しています([日本語によるデモ](https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/))。
 > 
 > ただし、現状では[組版処理の要件(日本語版)](https://www.w3.org/TR/2009/NOTE-jlreq-20090604/ja/)に記載されているような高度な調整は行っておらず、2種の判断基準による1種類の空き量しか導入していません。
 > CSS3で延期された `text-spacing` が今後CSS4などで導入されればこの拡張は不要になることでしょう。
@@ -20,7 +19,7 @@ This Sphinx extension provides an alternative function to adjust such distances.
 
 This extension is inspired by [sphinxcontrib-trimblank](https://github.com/amedama41/sphinxcontrib-trimblank).
 The combination betweeen `sphinxcontrib-trimblank` and `sphinxcontrib-cjkspacer` should work well for the `html` builders:
-`sphinxcontrib-trimblank` removes redundant spaces caused by the limitation of the reStructuredText syntax, and then `sphinxcontrib-cjkspacer` adjusts distances among characters (See [demo](https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/)).
+`sphinxcontrib-trimblank` removes redundant spaces caused by the limitation of the reStructuredText syntax, and then `sphinxcontrib-cjkspacer` adjusts distances among characters (See [Japanese demo](https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/)).
 
 ## Install
 
@@ -37,7 +36,7 @@ extensions += ['sphinxcontrib.cjkspacer']
 ```
 
 ## Example
-[tests/](https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer/tree/master/tests): ([demo](https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/))
+[tests/](https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer/tree/master/tests): ([Japanese demo](https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/))
 
 - In `conf.py`
 
@@ -50,7 +49,7 @@ extensions += ['sphinxcontrib.cjkspacer']
 
     ```CSS
     .cjkspacer {
-        padding-right: 0.13em;
+        padding-right: 0.165em;
     }
     ```
 
@@ -65,7 +64,7 @@ extensions += ['sphinxcontrib.cjkspacer']
     For example,
     ```css
     .cjkspacer {
-        padding-right: 0.13em;
+        padding-right: 0.165em;
     }
     ```
     
@@ -85,11 +84,11 @@ extensions += ['sphinxcontrib.cjkspacer']
     
     If regular expressions
     
-    -  `f'[^{cjkspacer_before_exceptions}{cjkspacer_cjk_characters}][{cjkspacer_cjk_characters}']`
+    -  `f'(?<![{cjkspacer_before_exceptions}{cjkspacer_cjk_characters}])(?=[{cjkspacer_cjk_characters}'])`
 
     or 
 
-    -  `f'[{cjkspacer_cjk_characters}'][^{cjkspacer_after_exceptions}{cjkspacer_cjk_characters}]`
+    -  `f'(?<=[{cjkspacer_cjk_characters}])(?![{cjkspacer_after_exceptions}{cjkspacer_cjk_characters}])'`
     
     match parts of texts, they are regarded as the boundaries.
     
@@ -97,9 +96,9 @@ extensions += ['sphinxcontrib.cjkspacer']
 
 In the default configuration, we employ relatively simple rules.
 
-If a CJK character is *preceded* by a **space** (` \t\f\v`), **newline** (`\n\r`), or **opening parenthesis** (`({\[`), we do not insert a spacer *before* the CJK character.
+If a CJK character is *preceded* by a **space** (` \t\f\v`), **newline** (`\n\r`), or **opening parenthesis** (`({[`), we do not insert a spacer *before* the CJK character.
 
-If a CJK character is *followed* by a **space** (` \t\f\v`), **newline** (`\n\r`), **closing parenthesis** (`[)}\]]`), or **punctuation** (`,.:;!?`), we do not insert a spacer *after* the CJK character.
+If a CJK character is *followed* by a **space** (` \t\f\v`), **newline** (`\n\r`), **closing parenthesis** (`)}]`), or **punctuation** (`,.:;!?`), we do not insert a spacer *after* the CJK character.
 
 Here, we do not use `r'\s'` instead of `' \t\f\v'`, because `r'\s'` also matches *Ideographicl Space* (`\u3000`, 　).
 
@@ -178,7 +177,7 @@ Instead, they are included into `cjkspacer_before_exceptions` and `cjkspacer_aft
 
     | Unicode  | Character | Name                |
     |:--------:|:---------:|:-------------------:|
-    | `\u30FB` | ・        | KATAKANA MIDDLE DOT |
+    | `\u30FB` | ・        | Katakana Middle Dot |
 
 - Exceptions among *Halfwidth and Fullwidth Forms* (`\uFF00-\uFF60`, `\uFFE0-\uFFE6`)
 

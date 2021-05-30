@@ -44,15 +44,20 @@ Without the extensions
     </div>
     </blockquote>
 
-Demo
 
+Demo
 ============================================================
 
-1. without space
-2. with `sphinxcontrib.trimblank` and `sphinxcontrib.cjkpacer`
-3. with half-width space
+1. スペースなし
+    (without spaces)
+   
+2. `sphinxcontrib.trimblank` ・ `sphinxcontrib.cjkspacer` 拡張による調整
+    (with `sphinxcontrib.trimblank` and `sphinxcontrib.cjkspacer`)
 
-MAIN
+3. 半角スペースあり
+    (with half-width spaces)
+
+TEXT
 ------------------------------------------------------------
 .. code-block:: ReST
 
@@ -208,3 +213,12 @@ A　あ　1 A、あ、1 A。あ。1 A〈あ〈1 A〉あ〉1 A《あ《1 A》あ�
    </div>
 
 Note that Ideographicl Space (　) is trimmed by `sphinxcontrib.trimblank`.
+
+.. raw:: html
+   
+     <script>
+      $(":checkbox").on('click', function(){
+         $(".cjkspacer").toggleClass("cjkspacer-highlight")
+      });
+    </script>
+

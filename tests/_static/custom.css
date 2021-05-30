@@ -1,8 +1,12 @@
 .cjkspacer {
-    padding-right: 0.13em;
+    padding-right: 0.165em;
 }
 
 .cjkspacer-sample {
-    font-size: 2em;
+    font-size: 1.5em;
     line-height: 1em;
+}
+
+.cjkspacer-highlight {
+    background-color: #FF8800 ;
 }
