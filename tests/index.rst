@@ -27,7 +27,7 @@ With `sphinxcontrib.trimblank` and `sphinxcontrib.cjkspacer`
     This Sphinx extension provides an alternative function to adjust such distances.
 
 
-    異なる種類の文字種間の空き量を調整する機能を持たないフォーマットに、日本語を含むCJK文字とその他の文字種の間での空き量(スペース)調整機能を与えるSphinx拡張です。
+    異なる種類の文字種間の空き量(スペース)を調整する機能を持たないフォーマットに、日本語を含むCJK文字とその他の文字種の間での空き量調整機能を与えるSphinx拡張です。
     この拡張と `sphinxcontrib-trimblank <https://github.com/amedama41/sphinxcontrib-trimblank>`_ などを併用することで、HTML出力において、数字／英語と日本語の間への手動でのスペース挿入・除去を行うよりも自然な仕上がりを実現することを目指しています (`日本語によるデモ <https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/>`_)。
     
     ただし、現状では `組版処理の要件(日本語版) <https://www.w3.org/TR/2009/NOTE-jlreq-20090604/ja/>`_ に記載されているような高度な調整は行っておらず、2種の判断基準による1種類の空き量しか導入していません。
@@ -39,7 +39,7 @@ Without the extensions
 .. raw:: html
    
     <blockquote>
-    <div><p>異なる種類の文字種間の空き量を調整する機能を持たないフォーマットに、日本語を含むCJK文字とその他の文字種の間での空き量(スペース)調整機能を与えるSphinx拡張です。この拡張と<a class="reference external" href="https://github.com/amedama41/sphinxcontrib-trimblank">sphinxcontrib-trimblank</a>などを併用することで、HTML出力において、数字／英語と日本語の間への手動でのスペース挿入・除去を行うよりも自然な仕上がりを実現することを目指しています (<a class="reference external" href="https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/">日本語によるデモ</a>)。</p>
+    <div><p>異なる種類の文字種間の空き量(スペース)を調整する機能を持たないフォーマットに、日本語を含むCJK文字とその他の文字種の間での空き量調整機能を与えるSphinx拡張です。この拡張と<a class="reference external" href="https://github.com/amedama41/sphinxcontrib-trimblank">sphinxcontrib-trimblank</a>などを併用することで、HTML出力において、数字／英語と日本語の間への手動でのスペース挿入・除去を行うよりも自然な仕上がりを実現することを目指しています (<a class="reference external" href="https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/">日本語によるデモ</a>)。</p>
     <p>ただし、現状では<a class="reference external" href="https://www.w3.org/TR/2009/NOTE-jlreq-20090604/ja/">組版処理の要件(日本語版)</a>に記載されているような高度な調整は行っておらず、2種の判断基準による1種類の空き量しか導入していません。CSS3で延期された<cite>text-spacing</cite>が今後CSS4などで導入されればこの拡張は不要になることでしょう。</p>
     </div>
     </blockquote>
