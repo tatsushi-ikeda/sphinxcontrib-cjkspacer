@@ -13,7 +13,7 @@ def _requires_from_file(filename):
 
 setup(
     name='sphinxcontrib-cjkspacer',
-    version='0.4.0',
+    version='0.4.1',
     url='https://github.com/tatsushi-ikeda/sphinxcontrib-cjkspacer',
     download_url='http://pypi.python.org/pypi/sphinxcontrib-cjkspacer',
     license='MIT',
