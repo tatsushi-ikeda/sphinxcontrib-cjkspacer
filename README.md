@@ -99,7 +99,7 @@ extensions += ['sphinxcontrib.cjkspacer']
     | Helvetica           | 0.28em                              |
     | Arial               | 0.33em                              |
 
-    Finally, if you cannot edit css files, the following example may be possible solution (in `conf.py`)
+    Finally, if you cannot edit css files, the following example may be a possible solution (in `conf.py`)
     ```Python
     cjkspacer_spacer_str = {'html': '&thinsp;'}
     ```
