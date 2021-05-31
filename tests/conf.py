@@ -16,7 +16,6 @@
 
 
 # -- Project information -----------------------------------------------------
-
 project = "Test for sphinxcontrib.cjkspacer"
 copyright = "2021, tatsushi-ikeda"
 author = "tatsushi-ikeda"
