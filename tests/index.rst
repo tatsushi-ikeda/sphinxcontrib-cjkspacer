@@ -51,7 +51,7 @@ Demo
 3. 半角スペースあり
     (with half-width spaces)
 
-TEXT
+Raw Text
 ------------------------------------------------------------
 .. code-block:: ReST
 
@@ -79,7 +79,7 @@ TEXT
    
    </div>
 
-EM
+Emphasis
 ------------------------------------------------------------
 
 .. code-block:: ReST
@@ -108,7 +108,7 @@ EM
    
    </div>
 
-STRONG
+Strong
 ------------------------------------------------------------
 .. code-block:: ReST
 
@@ -136,7 +136,7 @@ STRONG
    
    </div>
 
-CODE
+Code
 ------------------------------------------------------------
 .. code-block:: ReST
 
@@ -164,7 +164,7 @@ CODE
    
    </div>
 
-PARENTHESES & PUNCTUATION
+Parentheses & Punctuation
 ------------------------------------------------------------
 .. code-block:: ReST
 
@@ -190,7 +190,7 @@ PARENTHESES & PUNCTUATION
    
    </div>
 
-CJK SYMBOLS & PUNCTUATION
+CJK Symbols & Punctuation
 ------------------------------------------------------------
 .. code-block:: ReST
 
