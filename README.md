@@ -64,7 +64,7 @@ extensions += ['sphinxcontrib.cjkspacer']
     By using the default value, you can use `.cjkspacer` class in your custom css as follows:
         
     The width of this type of space should be 1/4 of the width of the CJK characters, at least in the cases of Japanese language (shibu aki "四分アキ", see `cl-19 ideographic characters`:`cl-27 Western characters` and `cl-27`:`cl-19` in [Table 1 Spacing between characters](https://www.w3.org/TR/jlreq/tables/table_ja2.pdf)). 
-    Hence, with the ordinary (half-width) space character `\u0020`, 
+    Hence, with the ordinary (half-width) space character `U+0020`, 
     ```CSS
     .cjkspacer:after {
         content: '\0020';
@@ -72,7 +72,7 @@ extensions += ['sphinxcontrib.cjkspacer']
     }
     ```
     may be the most preferable solution.
-    The use of the full-width space `\u3000`,
+    The use of the full-width space `U+3000`,
     ```CSS
     .cjkspacer:after {
         content: '\3000';
@@ -81,16 +81,16 @@ extensions += ['sphinxcontrib.cjkspacer']
     ```
     may be closer to the definition we need.
     In most cases, however, we cannot specify such a small `font-size` value.
-    Of course you can use other space characters, like the thin space character `\u2009`.
+    Of course you can use other space characters, like the thin space character `U+2009`.
     If you need, you can specify the width numerically as the following example:
     ```CSS
     .cjkspacer {
         padding-right: 0.15em;
     }
     ```
-    Note that the width of `\u0020` depends on the font you use. For example,
+    Note that the width of `U+0020` depends on the font you use. For example,
     
-    | font-family         | width of `\u0020` (eye measurement) |
+    | font-family         | width of `U+0020` (eye measurement) |
     |:-------------------:|:-----------------------------------:|
     | Lucida Sans Unicode | 0.31em                              |
     | Verdana             | 0.34em                              |
@@ -131,41 +131,41 @@ If a CJK character is *preceded* by a **space** (` \t\f\v`), **newline** (`\n\r`
 
 If a CJK character is *followed* by a **space** (` \t\f\v`), **newline** (`\n\r`), **closing parenthesis** (`)}]`), or **punctuation** (`,.:;!?`), we do not insert a spacer *after* the CJK character.
 
-Here, we do not use `r'\s'` instead of `' \t\f\v'`, because `r'\s'` also matches *Ideographicl Space* (`\u3000`, 　).
+Here, we do not use `r'\s'` instead of `' \t\f\v'`, because `r'\s'` also matches *Ideographicl Space* (`U+3000`, 　).
 
 The following Unicode blocks are adopted as the CJK characters in the default value of `cjkspacer_cjk_characters`:
 
 - CJK characters
 
-    | from         | to           | Example | Unicode block name                               |
-    |:------------:|:------------:|:-------:|:------------------------------------------------:|
-    | `\u2E80`     | `\u2EFF`     | ⺀      | CJK Radicals Supplement                          |
-    | `\u2F00`     | `\u2FDF`     | ⼀      | Kangxi Radicals                                  |
-    | `\u2FF0`     | `\u2FFF`     | ⿰      | Ideographic Description Characters               |
-    | `\u3000`     | `\u303F`     | 々      | CJK Symbols and Punctuation                      |
-    | `\u3040`     | `\u309F`     | あ      | Hiragana                                         |
-    | `\u30A0`     | `\u30FF`     | ア      | Katakana                                         |
-    | `\u3100`     | `\u312F`     | ㄅ      | Bopomofo                                         |
-    | `\u3130`     | `\u318F`     | ㄱ      | Hangul Compatibility Jamo                        |
-    | `\u3190`     | `\u319F`     | ㆐      | Kanbun                                           |
-    | `\u31A0`     | `\u31BF`     | ㆠ      | Bopomofo Extended                                |
-    | `\u31C0`     | `\u31EF`     | ㇀      | CJK Strokes                                      |
-    | `\u31F0`     | `\u31FF`     | ㇰ      | Katakana Phonetic Extensions                     |
-    | `\u3200`     | `\u32FF`     | ㉑      | Enclosed CJK Letters and Months                  |
-    | `\u3300`     | `\u33FF`     | ㎏      | CJK Compatibility                                |
-    | `\u3400`     | `\u4DBF`     | 㐀      | CJK Unified Ideographs Extension A               |
-    | `\u4DC0`     | `\u4DFF`     | ䷀       | Yijing Hexagram Symbols                          |
-    | `\u4E00`     | `\u9FFF`     | 一      | CJK Unified Ideographs                           |
-    | `\uF900`     | `\uFAFF`     | 豈      | CJK Compatibility Ideographs                     |
-    | `\uFF00`     | `\uFF60`     | ！      | Halfwidth and Fullwidth Forms (Full width Forms) |
-    | `\uFFE0`     | `\uFFE6`     | ￠      | Halfwidth and Fullwidth Forms (Full width Forms) |
-    | `\U00020000` | `\U0002A6DF` | 𠀀      | CJK Unified Ideographs Extension B               |
-    | `\U0002A700` | `\U0002B73F` | 𪜀      | CJK Unified Ideographs Extension C               |
-    | `\U0002B740` | `\U0002B81F` | 𫝀      | CJK Unified Ideographs Extension D               |
-    | `\U0002B820` | `\U0002CEAF` | 𫠠      | CJK Unified Ideographs Extension E               |
-    | `\U0002CEB0` | `\U0002EBEF` | 𬺰      | CJK Unified Ideographs Extension F               |
-    | `\U0002F800` | `\U0002FA1F` | 丽      | CJK Compatibility Ideographs Supplement          |
-    | `\U00030000` | `\U0003134F` | 𰀀      | CJK Unified Ideographs Extension G               |
+    | from      | to        | Example | Unicode block name                               |
+    |:---------:|:---------:|:-------:|:------------------------------------------------:|
+    | `U+2E80`  | `U+2EFF`  | ⺀      | CJK Radicals Supplement                          |
+    | `U+2F00`  | `U+2FDF`  | ⼀      | Kangxi Radicals                                  |
+    | `U+2FF0`  | `U+2FFF`  | ⿰      | Ideographic Description Characters               |
+    | `U+3000`  | `U+303F`  | 々      | CJK Symbols and Punctuation                      |
+    | `U+3040`  | `U+309F`  | あ      | Hiragana                                         |
+    | `U+30A0`  | `U+30FF`  | ア      | Katakana                                         |
+    | `U+3100`  | `U+312F`  | ㄅ      | Bopomofo                                         |
+    | `U+3130`  | `U+318F`  | ㄱ      | Hangul Compatibility Jamo                        |
+    | `U+3190`  | `U+319F`  | ㆐      | Kanbun                                           |
+    | `U+31A0`  | `U+31BF`  | ㆠ      | Bopomofo Extended                                |
+    | `U+31C0`  | `U+31EF`  | ㇀      | CJK Strokes                                      |
+    | `U+31F0`  | `U+31FF`  | ㇰ      | Katakana Phonetic Extensions                     |
+    | `U+3200`  | `U+32FF`  | ㉑      | Enclosed CJK Letters and Months                  |
+    | `U+3300`  | `U+33FF`  | ㎏      | CJK Compatibility                                |
+    | `U+3400`  | `U+4DBF`  | 㐀      | CJK Unified Ideographs Extension A               |
+    | `U+4DC0`  | `U+4DFF`  | ䷀       | Yijing Hexagram Symbols                          |
+    | `U+4E00`  | `U+9FFF`  | 一      | CJK Unified Ideographs                           |
+    | `U+F900`  | `U+FAFF`  | 豈      | CJK Compatibility Ideographs                     |
+    | `U+FF00`  | `U+FF60`  | ！      | Halfwidth and Fullwidth Forms (Full width Forms) |
+    | `U+FFE0`  | `U+FFE6`  | ￠      | Halfwidth and Fullwidth Forms (Full width Forms) |
+    | `U+20000` | `U+2A6DF` | 𠀀      | CJK Unified Ideographs Extension B               |
+    | `U+2A700` | `U+2B73F` | 𪜀      | CJK Unified Ideographs Extension C               |
+    | `U+2B740` | `U+2B81F` | 𫝀      | CJK Unified Ideographs Extension D               |
+    | `U+2B820` | `U+2CEAF` | 𫠠      | CJK Unified Ideographs Extension E               |
+    | `U+2CEB0` | `U+2EBEF` | 𬺰      | CJK Unified Ideographs Extension F               |
+    | `U+2F800` | `U+2FA1F` | 丽      | CJK Compatibility Ideographs Supplement          |
+    | `U+30000` | `U+3134F` | 𰀀      | CJK Unified Ideographs Extension G               |
 
 The following block is also included into `cjkspacer_cjk_characters` for consistency with *Enclosed CJK Letters and Months*.
 
@@ -173,66 +173,66 @@ The following block is also included into `cjkspacer_cjk_characters` for consist
 
     | from      | to        | Example | Unicode block name                               |
     |:---------:|:---------:|:-------:|:------------------------------------------------:|
-    | `\u2460`  | `\u24FF`  | ①      | Enclosed Alphanumerics                           |
+    | `U+2460`  | `U+24FF`  | ①      | Enclosed Alphanumerics                           |
 
 The following characters are eliminated from `cjkspacer_cjk_characters` since they are spaces, punctuation, and parentheses. 
 Instead, they are included into `cjkspacer_before_exceptions` and `cjkspacer_after_exceptions`.
 
-- Exceptions among *CJK symbols and punctuation* (`\u3000-\u303F`)
+- Exceptions among *CJK symbols and punctuation* (`U+3000-U+303F`)
 
     | Unicode  | Character | Name                               |
     |:--------:|:---------:|:----------------------------------:|
-    | `\u3000` | 　        | Ideographicl Space                 |
-    | `\u3001` | 、        | Ideographic Comma                  |
-    | `\u3002` | 。        | Ideographic Full Stop              |
-    | `\u3008` | 〈        | Left Angle Bracket                 |
-    | `\u3009` | 〉        | Right Angle Bracket                |
-    | `\u300A` | 《        | Left Double Angle Bracket          |
-    | `\u300B` | 》        | Right Double Angle Bracket         |
-    | `\u300C` | 「        | Left Corner Bracket                |
-    | `\u300D` | 」        | Right Corner Bracket               |
-    | `\u300E` | 『        | Left White Corner Bracket          |
-    | `\u300F` | 』        | Right White Corner Bracket         |
-    | `\u3010` | 【        | Left Black Lenticular Bracket      |
-    | `\u3011` | 】        | Right Black Lenticular Bracket     |
-    | `\u3014` | 〔        | Left Tortoise Shell Bracket        |
-    | `\u3015` | 〕        | Right Tortoise Shell Bracket       |
-    | `\u3016` | 〖        | Left White Lenticular Bracket      |
-    | `\u3017` | 〗        | Right White Lenticular Bracket     |
-    | `\u3018` | 〘        | Left White Turtoise Shell Bracket  |
-    | `\u3019` | 〙        | Right White Turtoise Shell Bracket |
-    | `\u301A` | 〚        | Left White Square Bracket          |
-    | `\u301B` | 〛        | Right White Square Bracket         |
+    | `U+3000` | 　        | Ideographicl Space                 |
+    | `U+3001` | 、        | Ideographic Comma                  |
+    | `U+3002` | 。        | Ideographic Full Stop              |
+    | `U+3008` | 〈        | Left Angle Bracket                 |
+    | `U+3009` | 〉        | Right Angle Bracket                |
+    | `U+300A` | 《        | Left Double Angle Bracket          |
+    | `U+300B` | 》        | Right Double Angle Bracket         |
+    | `U+300C` | 「        | Left Corner Bracket                |
+    | `U+300D` | 」        | Right Corner Bracket               |
+    | `U+300E` | 『        | Left White Corner Bracket          |
+    | `U+300F` | 』        | Right White Corner Bracket         |
+    | `U+3010` | 【        | Left Black Lenticular Bracket      |
+    | `U+3011` | 】        | Right Black Lenticular Bracket     |
+    | `U+3014` | 〔        | Left Tortoise Shell Bracket        |
+    | `U+3015` | 〕        | Right Tortoise Shell Bracket       |
+    | `U+3016` | 〖        | Left White Lenticular Bracket      |
+    | `U+3017` | 〗        | Right White Lenticular Bracket     |
+    | `U+3018` | 〘        | Left White Turtoise Shell Bracket  |
+    | `U+3019` | 〙        | Right White Turtoise Shell Bracket |
+    | `U+301A` | 〚        | Left White Square Bracket          |
+    | `U+301B` | 〛        | Right White Square Bracket         |
 
-- Exceptions among *Katakana* (`\u30A0-\u30FF`)
+- Exceptions among *Katakana* (`U+30A0-U+30FF`)
 
     | Unicode  | Character | Name                |
     |:--------:|:---------:|:-------------------:|
-    | `\u30FB` | ・        | Katakana Middle Dot |
+    | `U+30FB` | ・        | Katakana Middle Dot |
 
-- Exceptions among *Halfwidth and Fullwidth Forms* (`\uFF00-\uFF60`, `\uFFE0-\uFFE6`)
+- Exceptions among *Halfwidth and Fullwidth Forms* (`U+FF00-U+FF60`, `U+FFE0-U+FFE6`)
 
     | Unicode  | Character | Name                              |
     |:--------:|:---------:|:---------------------------------:|
-    | `\uFF01` | ！        | Fullwidth Exclamation Mark        |
-    | `\uFF02` | ＂        | Fullwidth Quotation Mark          |
-    | `\uFF07` | ＇        | Fullwidth Apostrophe              |
-    | `\uFF08` | （        | Fullwidth Left Parenthesis        |
-    | `\uFF09` | ）        | Fullwidth RIght Parenthesis       |
-    | `\uFF0C` | ，        | Fullwidth Comma                   |
-    | `\uFF0E` | ．        | Fullwidth Full Stop               |
-    | `\uFF0F` | ／        | Fullwidth Solidus                 |
-    | `\uFF1A` | ：        | Fullwidth Colon                   |
-    | `\uFF1B` | ；        | Fullwidth Semicolon               |
-    | `\uFF1F` | ？        | Fullwidth Question Mark           |
-    | `\uFF3B` | ［        | Fullwidth Left Square Bracket     |
-    | `\uFF3C` | ＼        | Fullwidth Reverse Solidus         |
-    | `\uFF3D` | ］        | Fullwidth Right Square Bracket    |
-    | `\uFF5B` | ｛        | Fullwidth Left Curly Bracket      |
-    | `\uFF5C` | ｜        | Fullwidth Vertical Line           |
-    | `\uFF5D` | ｝        | Fullwidth Right Curly Bracket     |
-    | `\uFF5F` | ｟        | Fullwidth Left White Parenthesis  |
-    | `\uFF60` | ｠        | Fullwidth Right White Parenthesis |
+    | `U+FF01` | ！        | Fullwidth Exclamation Mark        |
+    | `U+FF02` | ＂        | Fullwidth Quotation Mark          |
+    | `U+FF07` | ＇        | Fullwidth Apostrophe              |
+    | `U+FF08` | （        | Fullwidth Left Parenthesis        |
+    | `U+FF09` | ）        | Fullwidth RIght Parenthesis       |
+    | `U+FF0C` | ，        | Fullwidth Comma                   |
+    | `U+FF0E` | ．        | Fullwidth Full Stop               |
+    | `U+FF0F` | ／        | Fullwidth Solidus                 |
+    | `U+FF1A` | ：        | Fullwidth Colon                   |
+    | `U+FF1B` | ；        | Fullwidth Semicolon               |
+    | `U+FF1F` | ？        | Fullwidth Question Mark           |
+    | `U+FF3B` | ［        | Fullwidth Left Square Bracket     |
+    | `U+FF3C` | ＼        | Fullwidth Reverse Solidus         |
+    | `U+FF3D` | ］        | Fullwidth Right Square Bracket    |
+    | `U+FF5B` | ｛        | Fullwidth Left Curly Bracket      |
+    | `U+FF5C` | ｜        | Fullwidth Vertical Line           |
+    | `U+FF5D` | ｝        | Fullwidth Right Curly Bracket     |
+    | `U+FF5F` | ｟        | Fullwidth Left White Parenthesis  |
+    | `U+FF60` | ｠        | Fullwidth Right White Parenthesis |
 
 Thus, we set the following as the default configuration.
 
