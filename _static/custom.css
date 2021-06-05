@@ -9,9 +9,14 @@
 }
 
 .cjkspacer-highlight {
-    background-color: #FF8800 ;
+    background-color: #FF8800;
 }
 
 .cjkspacer-toggle {
-    color: #FF8800 ;
+    color: #FF8800;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, "Helvetica Neue",
+                 Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
