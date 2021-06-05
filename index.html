@@ -8,7 +8,8 @@
 <link rel="stylesheet" type="text/css" href="_static/pygments.css">
 <link rel="stylesheet" type="text/css" href="_static/alabaster.css">
 <link rel="stylesheet" type="text/css" href="_static/custom.css">
-<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script><script src="_static/jquery.js"></script><script src="_static/underscore.js"></script><script src="_static/doctools.js"></script><link rel="index" title="Index" href="genindex.html">
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script><script src="_static/jquery.js"></script><script src="_static/underscore.js"></script><script src="_static/doctools.js"></script><link rel="canonical" href="https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/index.html">
+<link rel="index" title="Index" href="genindex.html">
 <link rel="search" title="Search" href="search.html">
 <link rel="stylesheet" href="_static/custom.css" type="text/css">
 <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
@@ -44,8 +45,10 @@ gtag('config', 'G-NG6SVRSRY2');
 <p>Some of the word processors, e.g., Microsoft® Word and TeX (at least in the case of pTeX), adjust the distances (spaces) between the CJK characters and the others automatically (c.f. <a class="reference external" href="https://www.w3.org/TR/jlreq/#spacing_between_characters">Requirements for Japanese Text Layout#spacing between characters</a>).
 Unfortunately, however, HTML with CSS does not have this function as of CSS3 (See the <cite>text-spacing</cite> property discussed in some old versions of W3C® Working Draft, e.g., <a class="reference external" href="https://www.w3.org/TR/2011/WD-css3-text-20110901/">1 September 2011</a> and <a class="reference external" href="https://www.w3.org/TR/2012/WD-css3-text-20120119/">19 January 2012</a>).
 This Sphinx extension provides an alternative function to adjust such distances.</p>
-<p>異なる種類の文字種間の空き量<span class="cjkspacer"></span>(スペース)<span class="cjkspacer"></span>を調整する機能を持たないフォーマットに、日本語を含む<span class="cjkspacer"></span>CJK<span class="cjkspacer"></span>文字とその他の文字種の間での空き量調整機能を与える<span class="cjkspacer"></span>Sphinx<span class="cjkspacer"></span>拡張です。この拡張と<span class="cjkspacer"></span><a class="reference external" href="https://github.com/amedama41/sphinxcontrib-trimblank">sphinxcontrib-trimblank</a><span class="cjkspacer"></span>などを併用することで、HTML<span class="cjkspacer"></span>出力において、数字／英語と日本語の間への手動での半角スペース挿入・除去を行うよりも自然な仕上がりを実現することを目指しています<span class="cjkspacer"></span>(<a class="reference external" href="https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/">日本語によるデモ</a>)。</p>
-<p>ただし、現状では<a class="reference external" href="https://www.w3.org/TR/2009/NOTE-jlreq-20090604/ja/">組版処理の要件<span class="cjkspacer"></span>(日本語版)</a><span class="cjkspacer"></span>に記載されているような高度な調整は行っておらず、2<span class="cjkspacer"></span>種の判断基準による<span class="cjkspacer"></span>1<span class="cjkspacer"></span>種類の空き量しか導入していません。CSS3<span class="cjkspacer"></span>で延期された<span class="cjkspacer"></span><cite>text-spacing</cite><span class="cjkspacer"></span>が今後<span class="cjkspacer"></span>CSS4<span class="cjkspacer"></span>などで導入されればこの拡張は不要になることでしょう。</p>
+<p>異なる種類の文字種間の空き量(スペース)を調整する機能を持たないフォーマットに、日本語を含むCJK文字とその他の文字種の間での空き量調整機能を与えるSphinx拡張です。
+この拡張と <a class="reference external" href="https://github.com/amedama41/sphinxcontrib-trimblank">sphinxcontrib-trimblank</a> などを併用することで、HTML出力において、数字／英語と日本語の間への手動での半角スペース挿入・除去を行うよりも自然な仕上がりを実現することを目指しています(<a class="reference external" href="https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/">日本語によるデモ</a>)。</p>
+<p>ただし、現状では <a class="reference external" href="https://www.w3.org/TR/2009/NOTE-jlreq-20090604/ja/">組版処理の要件(日本語版)</a> に記載されているような高度な調整は行っておらず、2種の判断基準による1種類の空き量しか導入していません。
+CSS3で延期された <cite>text-spacing</cite> が今後CSS4などで導入されればこの拡張は不要になることでしょう。</p>
 </div>
 </blockquote>
 </section><section id="without-the-extensions"><h3>Without the extensions<a class="headerlink" href="#without-the-extensions" title="Permalink to this headline">¶</a>
@@ -66,7 +69,7 @@ This Sphinx extension provides an alternative function to adjust such distances.
 </dl></li>
 <li><dl class="simple">
 <dt>
-<cite>sphinxcontrib.trimblank</cite>・<cite>sphinxcontrib.cjkspacer</cite><span class="cjkspacer"></span>拡張による調整</dt>
+<cite>sphinxcontrib.trimblank</cite> ・ <cite>sphinxcontrib.cjkspacer</cite> 拡張による調整</dt>
 <dd>
 <p>(with <cite>sphinxcontrib.trimblank</cite> and <cite>sphinxcontrib.cjkspacer</cite>)</p>
 </dd>
@@ -86,7 +89,7 @@ This Sphinx extension provides an alternative function to adjust such distances.
 </div>
 <div class="cjkspacer-sample"><ol class="arabic simple">
 <li><p><span>あいうえおabcdいろはにほへと01234数字:あAいB</span></p></li>
-<li><p>あいうえお<span class="cjkspacer"></span>abcd<span class="cjkspacer"></span>いろはにほへと<span class="cjkspacer"></span>01234<span class="cjkspacer"></span>数字:<span class="cjkspacer"></span>あ<span class="cjkspacer"></span>A<span class="cjkspacer"></span>い<span class="cjkspacer"></span>B</p></li>
+<li><p>あいうえおabcdいろはにほへと01234数字:あAいB</p></li>
 <li><p><span>あいうえお abcd いろはにほへと 01234 数字: あ A い B</span></p></li>
 </ol></div></section><section id="emphasis"><h3>Emphasis<a class="headerlink" href="#emphasis" title="Permalink to this headline">¶</a>
 </h3>
@@ -96,7 +99,7 @@ This Sphinx extension provides an alternative function to adjust such distances.
 </div>
 <div class="cjkspacer-sample"><ol class="arabic simple">
 <li><p><span>あいうえお<em>abcd</em>いろ<em>はに</em>ほへと<em>01234数</em>字<em>:あAいB</em></span></p></li>
-<li><p>あいうえお<span class="cjkspacer"></span><em>abcd</em><span class="cjkspacer"></span>いろ<em>はに</em>ほへと<span class="cjkspacer"></span><em>01234<span class="cjkspacer"></span>数</em>字<em>:<span class="cjkspacer"></span>あ<span class="cjkspacer"></span>A<span class="cjkspacer"></span>い<span class="cjkspacer"></span>B</em></p></li>
+<li><p>あいうえお <em>abcd</em> いろ <em>はに</em> ほへと <em>01234数</em> 字 <em>:あAいB</em></p></li>
 <li><p><span>あいうえお <em>abcd</em> いろ<em>はに</em>ほへと <em>01234 数</em>字<em>: あ A い B</em></span></p></li>
 </ol></div></section><section id="strong"><h3>Strong<a class="headerlink" href="#strong" title="Permalink to this headline">¶</a>
 </h3>
@@ -106,7 +109,7 @@ This Sphinx extension provides an alternative function to adjust such distances.
 </div>
 <div class="cjkspacer-sample"><ol class="arabic simple">
 <li><p><span>あいうえお<strong>abcd</strong>いろ<strong>はに</strong>ほへと<strong>01234数</strong>字<strong>:あAいB</strong></span></p></li>
-<li><p>あいうえお<span class="cjkspacer"></span><strong>abcd</strong><span class="cjkspacer"></span>いろ<strong>はに</strong>ほへと<span class="cjkspacer"></span><strong>01234<span class="cjkspacer"></span>数</strong>字<strong>:<span class="cjkspacer"></span>あ<span class="cjkspacer"></span>A<span class="cjkspacer"></span>い<span class="cjkspacer"></span>B</strong></p></li>
+<li><p>あいうえお <strong>abcd</strong> いろ <strong>はに</strong> ほへと <strong>01234数</strong> 字 <strong>:あAいB</strong></p></li>
 <li><p><span>あいうえお <strong>abcd</strong> いろ<strong>はに</strong>ほへと <strong>01234 数</strong>字<strong>: あ A い B</strong></span></p></li>
 </ol></div></section><section id="code"><h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a>
 </h3>
@@ -116,7 +119,7 @@ This Sphinx extension provides an alternative function to adjust such distances.
 </div>
 <div class="cjkspacer-sample"><ol class="arabic simple">
 <li><p><span>あいうえお<code class="docutils literal notranslate"><span class="pre">abcd</span></code>いろ<code class="docutils literal notranslate"><span class="pre">はに</span></code>ほへと<code class="docutils literal notranslate"><span class="pre">01234数</span></code>字<code class="docutils literal notranslate"><span class="pre">:あAいB</span></code></span></p></li>
-<li><p>あいうえお<span class="cjkspacer"></span><code class="docutils literal notranslate"><span class="pre">abcd</span></code><span class="cjkspacer"></span>いろ<code class="docutils literal notranslate"><span class="pre">はに</span></code>ほへと<span class="cjkspacer"></span><code class="docutils literal notranslate"><span class="pre">01234数</span></code>字<code class="docutils literal notranslate"><span class="pre">:あAいB</span></code></p></li>
+<li><p>あいうえお <code class="docutils literal notranslate"><span class="pre">abcd</span></code> いろ <code class="docutils literal notranslate"><span class="pre">はに</span></code> ほへと <code class="docutils literal notranslate"><span class="pre">01234数</span></code> 字 <code class="docutils literal notranslate"><span class="pre">:あAいB</span></code></p></li>
 <li><p><span>あいうえお <code class="docutils literal notranslate"><span class="pre">abcd</span></code> いろ<code class="docutils literal notranslate"><span class="pre">はに</span></code>ほへと <code class="docutils literal notranslate"><span class="pre">01234 数</span></code>字<code class="docutils literal notranslate"><span class="pre"> : あ A い B</span></code></span></p></li>
 </ol></div></section><section id="parentheses-punctuation"><h3>Parentheses &amp; Punctuation<a class="headerlink" href="#parentheses-punctuation" title="Permalink to this headline">¶</a>
 </h3>
@@ -126,7 +129,7 @@ This Sphinx extension provides an alternative function to adjust such distances.
 </div>
 <div class="cjkspacer-sample"><ol class="arabic simple">
 <li><p>括弧(Parentheses):Parentheses(括弧),コンマ,ピリオド.読点、句点。  スペース  Space.</p></li>
-<li><p>括弧<span class="cjkspacer"></span>(Parentheses):Parentheses(括弧),<span class="cjkspacer"></span>コンマ,<span class="cjkspacer"></span>ピリオド.<span class="cjkspacer"></span>読点、句点。  スペース  Space.</p></li>
+<li><p>括弧(Parentheses):Parentheses(括弧),コンマ,ピリオド.読点、句点。  スペース  Space.</p></li>
 <li><p>括弧 (Parentheses) : Parentheses (括弧) , コンマ , ピリオド. 読点、句点。スペース Space.</p></li>
 </ol></div></section><section id="cjk-symbols-punctuation"><h3>CJK Symbols &amp; Punctuation<a class="headerlink" href="#cjk-symbols-punctuation" title="Permalink to this headline">¶</a>
 </h3>
@@ -135,7 +138,7 @@ This Sphinx extension provides an alternative function to adjust such distances.
 </pre></div>
 </div>
 <div class="cjkspacer-sample">
-<p>A<span class="cjkspacer"></span>あ<span class="cjkspacer"></span>1 A、あ、1 A。あ。1 A〈あ〈1 A〉あ〉1 A《あ《1 A》あ》1 A「あ「1 A」あ」1 A『あ『1 A』あ』1 A【あ【1 A】あ】1 A〔あ〔1 A〕あ〕1 A〖あ〖1 A〗あ〗1 A〘あ〘1 A〙あ〙1 A〚あ〚1 A〛あ〛1 A・あ・1 A！あ！1 A＂あ＂1 A＇あ＇1 A（あ（1 A）あ）1 A，あ，1 A．あ．1 A／あ／1 A：あ：1 A；あ；1 A？あ？1 A［あ［1 A＼あ＼1 A］あ］1 A｛あ｛1 A｜あ｜1 A｝あ｝1 A｟あ｟1 A｠あ｠1</p>
+<p>A　あ　1 A、あ、1 A。あ。1 A〈あ〈1 A〉あ〉1 A《あ《1 A》あ》1 A「あ「1 A」あ」1 A『あ『1 A』あ』1 A【あ【1 A】あ】1 A〔あ〔1 A〕あ〕1 A〖あ〖1 A〗あ〗1 A〘あ〘1 A〙あ〙1 A〚あ〚1 A〛あ〛1 A・あ・1 A！あ！1 A＂あ＂1 A＇あ＇1 A（あ（1 A）あ）1 A，あ，1 A．あ．1 A／あ／1 A：あ：1 A；あ；1 A？あ？1 A［あ［1 A＼あ＼1 A］あ］1 A｛あ｛1 A｜あ｜1 A｝あ｝1 A｟あ｟1 A｠あ｠1</p>
 </div>
 <p>Note that Ideographicl Space (　) is trimmed by <cite>sphinxcontrib.trimblank</cite>.</p>
  <script>
