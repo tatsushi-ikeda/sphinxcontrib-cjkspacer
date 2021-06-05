@@ -32,7 +32,7 @@ jobs:
       run: |
         mkdir publish -p
         pushd tests
-        echo "extensions = ['sphinx_sitemap']" >> conf.py
+        echo "extensions += ['sphinx_sitemap']" >> conf.py
         echo "html_baseurl = 'https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/'" >> conf.py
         make html
         echo "${POSTPROCESS}" > postprocess.py
