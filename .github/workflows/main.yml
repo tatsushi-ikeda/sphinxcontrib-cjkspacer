@@ -24,7 +24,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install .
-        pip install sphinxcontrib-trimblank lxml
+        pip install sphinxcontrib-trimblank sphinx-sitemap lxml
     - name: Build
       env:
         POSTPROCESS: ${{ secrets.POSTPROCESS }}
@@ -32,6 +32,8 @@ jobs:
       run: |
         mkdir publish -p
         pushd tests
+        echo "extensions = ['sphinx_sitemap']" >> conf.py
+        echo "html_baseurl = 'https://tatsushi-ikeda.github.io/sphinxcontrib-cjkspacer/'" >> conf.py
         make html
         echo "${POSTPROCESS}" > postprocess.py
         echo "${ARGS}" > args
